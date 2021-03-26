@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;board, boardupload, member&apos; to &apos;WebContent&apos;" description="Move 3 resources to &apos;WebContent&apos;" destination="WebContent" element1="WebContent/WEB-INF/board" element2="WebContent/WEB-INF/boardupload" element3="WebContent/WEB-INF/member" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="3" stamp="1609219688622" updateReferences="true"/>
+</session>

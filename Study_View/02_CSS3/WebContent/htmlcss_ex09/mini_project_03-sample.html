@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>예제</title>
+<style type="text/css">
+form {
+	width: 350px;
+	/* 대상을 상하좌우 가운데로 정렬 */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+fieldset {
+	border : 1px solid red;
+}
+
+legend {
+	text-align: center;
+}
+
+table {
+	width: 320px;	
+	margin: 0px auto;
+}
+
+input:focus {
+	padding: 10px;
+	border: 0px;
+	outline: none;
+	border: 1px solid blue;
+}
+
+input:enabled {
+	color: blue;
+	font-weight: bold;
+}
+
+input:disabled {
+	color: red;
+}
+
+table tr td:first-child {
+	text-align: center;
+}
+</style>
+<script>
+</script>
+</head>
+
+<body>
+	<div>
+		<form action="#" name="form" id="form">
+			<fieldset>
+				<legend>예제</legend>
+					<table>
+						<tr>
+							<td><label for="name" class="name">이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름</label></td>
+							<td><input type="text" name="name" id="name" placeholder="이름을 입력하세요."></td>
+						</tr>
+						<tr>
+							<td><label for="id" class="id">아&nbsp;&nbsp;이&nbsp;&nbsp;디</label></td>
+							<td><input type="text" name="id" id="id" placeholder="아이디를 입력하세요."></td>
+						</tr>
+						<tr>
+							<td><label for="password" class="password">비밀&nbsp;번호</label></td>
+							<td>
+								<input type="password" name="password" id="password" 
+											 value="123456789" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="radio" name="gender" id="male" checked="checked">남
+								<input type="radio" name="gender" id="female">여
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="submit" value="제출" onclick="return false;">
+								<input type="reset"  value="초기화">
+							</td>
+						</tr>
+					</table>		
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

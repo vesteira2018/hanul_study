@@ -1,0 +1,7 @@
+public class CalculatorEx {
+	public static void main(String[] args) {
+		System.out.println("덧셈 : " );
+		Calculator calc = new Calculator();
+		System.out.println(calc.sum(5, 3));
+	}
+}

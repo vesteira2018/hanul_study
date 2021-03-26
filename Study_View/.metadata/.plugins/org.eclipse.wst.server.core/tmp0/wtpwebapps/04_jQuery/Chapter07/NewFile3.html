@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+// 		$(".second").parent().css(
+// 			"border","1px solid red"		
+// 		);
+		
+// 		$("#wrap li").css(
+// 			"border","1px solid red"
+// 		);
+
+// 		$("body").children().css(
+// 			"border","1px solid red"
+// 		);
+
+// 		$("#first").next().css(
+// 			"border","1px solid red"
+// 		);
+
+// 		$("#first+li").css(	//#first .next()
+// 			"border","1px solid red"
+// 		);
+		
+// 		$("#third").siblings().css(
+// 			"background-color","red"
+// 		);
+		
+// 		$("#wrap li:even").css(	//0번부터 시작
+// 			"background-color","aqua"
+// 		);
+// 		$("#wrap li:odd").css(
+// 			"background-color","lime"
+// 		);
+		
+// 		$("#wrap li:first-of-type").css(
+// 			"background-color","aqua"
+// 	 	);
+// 		$("#wrap li:last-of-type").css(
+// 			"background-color","aqua"
+// 	 	);
+
+// 		$("#wrap li:nth-child(2n)").css(	//1번부터 시작
+// 			"background-color","lime"
+// 		);
+
+		$("#wrap li:eq(3)").css(
+			"background-color","green"
+		);
+		$("#wrap li:gt(3)").css(
+			"background-color","red"
+		);
+		$("#wrap li:lt(3)").css(
+			"background-color","blue"
+		);
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1>인접 관계 선택자</h1>
+	<ul id="wrap">
+		<li id="first">내용1</li>
+		<li id="second">내용2</li>
+		<li id="third">내용3</li>
+		<li id="fourth">내용4</li>
+		<li id="fifth">내용5</li>
+	</ul>
+</body>
+</html>

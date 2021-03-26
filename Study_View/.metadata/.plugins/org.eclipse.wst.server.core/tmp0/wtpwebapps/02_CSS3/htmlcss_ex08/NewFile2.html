@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	반응선택자 : 사용자의 반응으로 생성되는 특정한 상태를 선택하
+	:active - 클릭했을 때 반응
+	:hover - 커서를 올렸을 때 반응
+ -->
+<style type="text/css">
+	div {
+		width: 300px;
+		background-color: red;
+	}
+	
+	div ol li {
+		font-size: 20px;
+		font-weight: bold;
+		color: orange;
+	}
+	
+	div ol li:hover {
+		font-size: 2rem;
+		color: black;
+		cursor: pointer;
+	}
+	
+	div ol li:active {
+		color: blue;
+	}
+</style>
+</head>
+<body>
+<div>
+	<ol>
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+	</ol>
+</div>
+</body>
+</html>

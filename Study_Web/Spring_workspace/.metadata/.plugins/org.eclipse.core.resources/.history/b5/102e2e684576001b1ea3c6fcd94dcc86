@@ -1,0 +1,21 @@
+package com.hanul.iot;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import visual.VisualServiceImpl;
+
+@Controller
+public class VisualizationController {
+	@Autowired private VisualServiceImpl service;
+	
+	//시각화 화면 요청
+	@RequestMapping("/list.vi")
+	public String list(HttpSession session) {
+		session.setAttribute("category", "vi");
+		return "visual/list";
+	}
+}

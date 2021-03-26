@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title>실습</title>
+<style type="text/css">
+
+	.left_space {
+		background-color: red;
+	}
+	.center_space {
+		background-color: green;
+	}
+	.right_space {
+		background-color: blue;
+	}
+	
+#header {
+		width: 1000px;
+		overflow: hiddin;
+		margin: 0px auto;
+	}
+	
+	#header .left_space {
+		width: 150px;
+		height: 150px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 20px 0px;
+	}
+	#header .center_space {
+		width: 694px;
+		height: 150px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 0px 0px 20px 20px;
+	}
+	#header .right_space {
+		width: 150px;
+		height: 150px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 0px 20px;
+	}
+	
+#content {
+		width: 1000px;
+		overflow: hiddin;
+		margin: 0px auto;
+	}
+	
+	#content .left_space {
+		width: 150px;
+		height: 300px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 0px 20px 20px 0px;
+	}
+	#content .center_space {
+		width: 694px;
+		height: 300px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 20px;
+	}
+	#content .right_space {
+		width: 150px;
+		height: 300px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 20px 0px 0px 20px;
+	}
+	#content .center_space div ul {
+		overflow: hidden;
+	}
+	li {
+		padding: 10px 50px;	
+		float: left;
+		list-style: none;
+	}
+	h1 {
+		padding-left: 10px;
+	}
+	p {
+		padding-left: 10px;
+	}
+	
+
+#footer {
+		width: 1000px;
+		overflow: hiddin;
+		margin: 0px auto;
+	}
+	
+	#footer .left_space {
+		width: 150px;
+		height: 150px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 0px 20px;
+	}
+	#footer .center_space {
+		width: 694px;
+		height: 150px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 20px 20px 0px 0px;
+	}
+	#footer .right_space {
+		width: 150px;
+		height: 150px;
+		float: left;
+		border: 1px solid black;
+		border-radius: 20px 0px;
+	}
+</style>
+</head>
+<body>
+	<div id="header">
+		<div class="left_space"></div>
+		<div class="center_space"></div>
+		<div class="right_space"></div>
+	</div>
+
+	<div id="content">
+		<div class="left_space"></div>
+		<div class="center_space">
+			<div>
+				<ul>
+					<li>menu1</li>
+					<li>menu2</li>
+					<li>menu3</li>
+					<li>menu4</li>
+				</ul>
+			</div>
+			<div class="hiseoul">
+				<h1>하이서울브랜드</h1>
+				<p>서울시와 서울산업진흥원(SBA)이 공동으로 지원하는 하이 서울브랜드 사업은 우수한 기술력과 상품력을 보유하고
+					있으나 고유브랜드 육성에 어려움을 겪고 있는 우수기업들이 서울시가 인정한 기업 공동브랜드인 하이서울브랜드를 활용하여 제품
+					경쟁력을 강화할 수 있도록 각종 홍보 마케팅을 지원하는 사업입니다.</p>
+			</div>
+		</div>
+
+		<div class="right_space"></div>
+	</div>
+
+	<div id="footer">
+		<div class="left_space"></div>
+		<div class="center_space"></div>
+		<div class="right_space"></div>
+	</div>
+</body>
+</html>

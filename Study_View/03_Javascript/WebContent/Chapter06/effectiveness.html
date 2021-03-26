@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var str = "Html Css Jquery";
+	var reg1 = /css/;	//'css'문자가 존재하는가 (대소문자 구분)
+	
+	//test() : 지정된 규칙에 맞는 단어가 있으면 true를 반환
+	
+	var result1 = reg1.test(str);	//reg1 정규표현식으로 str을 검사
+	document.write(result1 + "<br />");	//false
+
+	var reg2 = /css/i;	//'css'문자가 존재하는가 (대소문자 무시)
+	var result2 = reg2.test(str);	//reg1 정규표현식으로 str을 검사
+	document.write(result2 + "<br />");	//true
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	position: relative;
+}
+
+#box {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 200px;
+	background: linear-gradient(#ff0000 0%, #0000ff 100%);
+	
+	position: absolute;
+	
+	animation-name: ball;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: alternative;
+	animation-timing-function: linear; 
+}
+
+#box h1 {
+	color: white;
+}
+
+#box:hover {
+	animation-play-state: paused;
+}
+
+@keyframes ball {
+	from {
+		left: 0px;
+		transform: rotate(0deg);
+	}
+	30% {
+		left: 0px;
+		transform: rotate(90deg);
+	}
+	70% {
+		left: 500px;
+	}
+	to {
+		left: 500px;
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,60 @@
+Javascript
+
+- 출력 함수
+	document.write("A");	//화면
+	console.log("B");	//console창
+	alert("C");		//알림
+
+- 위치 찾아가기
+	document.name.name;		//name으로 찾아가기
+	document.getElementById("id");	//id로 찾아가기
+
+- textarea, input text 텍스트 가져오기
+	textval = 위치.value;
+	위치.innerHTML = textval;
+
+	ex) visitstr = document.formtext.textstr.value;
+	document.getElementById("txt").innerHTML += visitstr;
+
+- if (!value) {} : value값이 없다면(null)
+
+- if (value) {} : value값이 존재한다면 (true)
+
+- 새로고침 시키기
+	location.reload();
+
+- 입력창 알림
+	prompt();
+
+- 파일 전체를 읽고 스크립트에 넣는 법
+	window.onload = function() {}; / 혹은 javascript를 body 밑에 넣으면 된다.
+
+- 배열의 객체수만큼 반복문 돌리기
+	for (var i in array)
+
+- 변수의 자료형 인식
+	typeof(variable) : object, string, number ...
+
+- 배열은 띄어쓰기공백도 index에 포함된다.
+	.indexOf() : 괄호 안에 들어간 글자의 index값, 한 자리 이상일 경우 가장 앞자리의 index가 나오며 배열 안에 같은 값이 있는 경우 첫 번째로 발견되는 index값을 표시한다.
+==	.search()
+<->	.lastIndexOf()
+
+- substr(x, y) / substring(x, y)
+	substr(x, y) : index x부터 11글자
+	substring(x, y) : index x부터 y미만까지(y-1 까지)
+
+- 팝업창 띄우기
+	window.open("xxx.html", "popupname", 
+		"width=n, height=n, left=n, top=n, scrollbars=, toolbars=, location=,");
+
+- 팝업창 이동
+	setInterval(function() {}, ms);
+
+- 페이지 이동
+	history.back(); 이전페이지로 이동
+	history.forward(); 다음페이지로 이동
+	history.go(n); n단계 다음 페이지로 이동 (-n 이전페이지)
+
+- submit 체크 시 잘못된 값이 있는 경우
+	if 조건문 사용 후 return false;

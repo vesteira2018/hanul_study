@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var name = prompt("당신의 영문 이름은?");
+	document.write(name.toUpperCase() + "<br />");
+	var num = prompt("당신의 휴대폰 연락처는?");
+	if (num.length != 11) {
+		location.reload();
+	} 
+	
+	document.write(num.replace(num.substr(7, 4), "****") + "<br />");
+	document.write(num.substr(0, 7) + "****" + "<br />");
+	document.write(num.substr(0, num.length - 4) + "****" + "<br />");
+	document.write(num.replace(num.substring(7, 11), "****") + "<br />");
+		
+	document.write(num.replace(num.substr(3, 4), "****") + "<br />");
+	document.write(num.replace(num.substring(3, 7), "****") + "<br />");
+	document.write(num.substr(0, 3) + "****" + num.substr(7, 4) + "<br />");
+	document.write(num.substr(0, num.length - 8) + "****" + num.substr(num.length - 4, 4) + "<br />");
+	
+	//num.substr(from, length)
+	//num.substring(from, to)
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

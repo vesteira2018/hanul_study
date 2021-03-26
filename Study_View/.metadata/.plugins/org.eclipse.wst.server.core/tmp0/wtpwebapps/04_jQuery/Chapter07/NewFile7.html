@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+// 		//내용 포함
+// 		$("li:contains('내용3')").css(
+// 			"border","1px dashed red"
+// 		);
+		
+// 		//태그 포함
+// 		$("li:has('strong')").css(
+// 			"border","2px solid blue"
+// 		);
+		
+// 		//제외
+// 		$("li").not(":first").css(
+// 			"background-color","yellow"
+// 		);
+		
+// 		//찾기
+// 		$("li:eq(1)").find("strong").css(
+// 			"font-size","22px"
+// 		);
+		
+// 		//.parent() == .closest("UpperTag")
+// 		$("#menu").parent().css(
+// 			"border","5px double lime"
+// 		);
+// 		$("#menu").closest("div").css(
+// 			"border","5px double lime"
+// 		);
+		
+// 		//.contents() == .children()
+// 		$("li").contents().css(
+// 			"border","5px double aqua"
+// 		);
+// 		$("li").children().css( 
+// 			"border","5px double aqua"
+// 		);
+		
+		$("#menu").children("li:eq(1)").css(
+			"color","violet"
+		).end().css(	//상위태그로 돌아간다
+			"color","green"
+		);
+		
+		
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<div id="wrap">
+		<div id="inner_wrap">
+			<ul id="menu">
+				<li>내용1</li>
+				<li><span>내용<strong>2</strong></span></li>
+				<li><a href="#">내용3</a></li>
+				<li>내용4</li>
+				<li>내용5</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

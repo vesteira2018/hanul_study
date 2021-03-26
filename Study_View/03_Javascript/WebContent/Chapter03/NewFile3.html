@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var userHeight = prompt("키를 입력하세요", "0");
+	var userWeight = prompt("몸무게를 입력하세요", "0");
+	
+	var normalWeight = (userHeight - 100) * 0.9;
+	var lowWeight = (userHeight - 100) * 0.75;
+	var highWeight = (userHeight - 100) * 1.05;
+	
+	alert("적정 몸무게는 " + normalWeight + "입니다.");
+	
+	var result;
+	if (userWeight >= highWeight) {
+		result = "과체중";
+	} else if (userWeight >= normalWeight) {
+		result = "정상체중";
+	} else {
+		result = "저체중";
+	}
+	
+	alert("당신의 키는 " + userHeight + ", 당신의 몸무게는 " + userWeight + 
+	"(으)로서 \n" + result + "입니다.");
+	
+/* 	if (userWeight >= highWeight) {
+		alert("당신의 키는 " + userHeight + ", 당신의 몸무게는 " + userWeight + 
+					"(으)로서 \n과체중입니다.");
+	} else if (userWeight >= normalWeight) {
+		alert("당신의 키는 " + userHeight + ", 당신의 몸무게는 " + userWeight + 
+					"(으)로서 \n정상체중입니다.");
+	} else {
+		alert("당신의 키는 " + userHeight + ", 당신의 몸무게는 " + userWeight + 
+		"(으)로서 \n저체중입니다.");
+	} */
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

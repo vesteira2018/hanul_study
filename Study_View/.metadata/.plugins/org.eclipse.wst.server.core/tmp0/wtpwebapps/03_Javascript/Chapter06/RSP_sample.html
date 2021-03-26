@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var inputString = prompt("가위, 바위, 보 중에 입력하세요", "ex. 가위, 바위, 보");
+	var userNumber;
+	switch (inputString) {
+	case "가위":
+		userNumber = 1;
+		break;
+	
+	case "바위":
+		userNumber = 2;
+		break;
+		
+	case "보":
+		userNumber = 3;
+		break;
+
+	default:
+		alert("잘못 입력하셨습니다.");
+		location.reload();
+		break;
+	}
+	
+	var comNumber = Math.ceil(Math.random() * 3);
+	var comString;
+	if (comNumber == 1) {
+		comString = "가위";
+	} else if (comNumber == 2) {
+		comString = "바위";
+	} else {
+		comString = "보";
+	}
+	
+// 	if (comNumber == userNumber) {
+// 		alert("컴퓨터의 선택은 " + comString + "이고\n내가 낸 것은 " + inputString + "이어서\n내가 맞췄습니다.");
+// 	} else {
+// 		alert("컴퓨터의 선택은 " + comString + "이고\n내가 낸 것은 " + inputString + "이어서\n내가 맞추지 못했습니다.");
+// 		location.reload();
+// 	}
+
+	if ((comNumber == 1 && userNumber == 2)
+			|| (comNumber == 2 && userNumber == 3)
+			|| (comNumber == 3 && userNumber == 1)) {
+		alert("컴퓨터의 선택은 " + comString + "이고\n내가 낸 것은 " + inputString + "이어서\n내가 이겼습니다.");
+	} else if (comNumber == userNumber) {
+		alert("컴퓨터의 선택은 " + comString + "이고\n내가 낸 것은 " + inputString + "이어서\n서로 비겼습니다.");
+		location.reload();
+	} else {
+		alert("컴퓨터의 선택은 " + comString + "이고\n내가 낸 것은 " + inputString + "이어서\n내가 졌습니다.");
+		location.reload();
+	}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

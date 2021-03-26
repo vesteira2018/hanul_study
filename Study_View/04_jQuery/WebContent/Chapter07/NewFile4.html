@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+* {
+	text-decoration: none;
+	color: black;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("a[title]").css(
+			"background-color","yellow"
+		);
+		$("a[href='http://www.nate.com']").css(
+			"background-color","pink"
+		);
+		$("a[href^='mailto']").css(
+			"background-color","aqua"
+		);	//시작
+		$("a[href$='net']").css(
+			"background-color","violet"
+		);	//끝
+		$("a[href*='google']").css(
+			"background-color","orange"
+		);	//포함
+		
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul>
+		<li><a href="http://www.naver.com" title="네이버 이동">네이버</a></li>
+		<li><a href="mailto:admin@naver.com">관리자에게</a></li>
+		<li><a href="http://www.nate.com">네이트</a></li>
+		<li><a href="http://www.daum.net">다음</a></li>
+		<li><a href="http://www.google.com">구글</a></li>
+	</ul>
+</body>
+</html>

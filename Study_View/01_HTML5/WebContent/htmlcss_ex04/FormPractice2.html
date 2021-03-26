@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ 	input:focus::-webkit-input-placeholder {
+		color: transparent;
+	}
+	/* Safari, Chrome */
+	input:focus::-moz-placeholder {
+		color: transparent;
+	}
+	/* Firefox */
+	input:focus::-ms-input-placeholder {
+		color: transparent;
+	}
+	/* IE, MS-Edge */
+</style>
+	<script type="text/javascript">
+		function nameClear() {
+			/* document.myForm.name.value=""; */
+			document.myForm.name.value="";
+		}
+		function image1Click() {
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<form action="#" method="get" name="myForm" id="myForm">
+		<label for="name">성명 :</label>
+		<input type="text" name="name" id="name"
+					 value="이름을 입력하세요" 
+					 onclick="nameClear();" autofocus="autofocus" /><br />
+					 
+		<label for="nickname">별명 :</label>
+		<input type="text" name="nickname" id="nickname"
+					 value="별명을 입력하세요" 
+					 onclick="this.value='';" /><br />
+					 
+		<label for="id">아이디 :</label>
+		<input type="text" name="id" id="id"
+					 placeholder="아이디를 입력하세요" 
+					 onclick="this.placeholder='';" /><br />
+					 
+		<label for="pw">비밀번호 :</label>
+		<input type="text" name="pw" id="pw" /><br />
+		
+		<input type="hidden" name="hidden" id="hidden"
+					 value="12345" /> <!-- 보이지 않게 전송 -->
+		
+		<p>
+			<input type="button" value="버튼1" />
+			<button type="button">버튼2</button>
+			<button type="button">
+				<img src="img01.png" />
+			</button>
+		</p>
+	
+		<fieldset>
+			<legend>취미</legend>
+			
+			<input type="checkbox" name="hobby"
+						 value="mount" id="mount" />
+			<label for="mount">등산</label>
+			
+			<input type="checkbox" name="hobby"
+						 value="swim" id="swim" checked="checked" />
+			<label for="swim">수영</label>
+			
+			<input type="checkbox" name="hobby"
+						 value="soccer" id="soccer" />
+			<label for="soccer">축구</label>
+		</fieldset>
+		
+		<fieldset>
+			<legend>성별</legend>
+			
+			<input type="radio" name="male"
+						 value="male" id="male" checked="checked" />
+			<label for="male">남자</label>
+			<input type="radio" name="female"
+						 value="female" id="female" />
+			<label for="female">여자</label>
+		</fieldset>
+	
+		<p>
+			<input type="file" /><br />
+		</p>
+		
+		<input type="image" src="img01.png" 
+					 onclick="return image1Click();" />그림1<br />
+		<input type="image" src="img02.png" 
+					 onclick="return false;" />그림2<br />
+		<input type="image" src="img03.png" 
+					 onclick="login(e);" />그림3<br />
+		<img src="image" onclick="login(e);" />그림4<br />
+		
+		<input type="submit" value="전송" />
+		<input type="reset" value="취소" />		
+	</form> <!-- form -->
+</body>
+</html>

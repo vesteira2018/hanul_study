@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+// 		$("h1 a").on("mouseover focus", function() {
+// 			$(this).css("color","red");
+// 		});	//on()
+
+// 		$("h1 a").on("mouseout blur", function() {
+// 			$(this).css("color","blue");
+// 		});	//on()
+
+		$("h1 a").on({
+			"mouseover focus" : function() {
+				$(this).css("color","red");
+			},
+			"mouseout blur" : function() {
+				$(this).css("color","lime");
+			}
+		});
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1>
+		<a href="#">button</a>
+	</h1>
+</body>
+</html>

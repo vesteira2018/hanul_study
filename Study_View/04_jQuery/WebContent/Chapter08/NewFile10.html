@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#btn").mouseover(function() {
+			$("#btn").css("border","2px solid red");
+			$("#btn").text("MouseOver");
+		});	//btn mouseover
+		
+		$("#btn").mouseout(function() {
+			$(this).css("border","2px solid blue");
+			$(this).text("MouseOut");
+		});	//btn mouseover
+		
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<button id="btn">마우스 오버</button>
+</body>
+</html>

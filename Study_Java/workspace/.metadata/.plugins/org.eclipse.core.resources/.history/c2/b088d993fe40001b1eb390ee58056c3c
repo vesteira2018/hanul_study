@@ -1,0 +1,8 @@
+public class CircleEx {
+	public static void main(String[] args) {
+		int circleRad = 5;
+		Circle circle = new Circle();
+		
+		System.out.println("원의 넓이 = " + circle.getArea(circleRad));
+	}
+}

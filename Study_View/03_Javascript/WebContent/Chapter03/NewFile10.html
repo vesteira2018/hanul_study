@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	text-align: center;
+	border-style: none;
+	margin: 0px auto;
+}
+
+table tr td {
+	width: 70px;
+	height: 70px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+</style>
+<script type="text/javascript">
+	var row = prompt("행수를 입력하세요", "0");
+	var column = prompt("열수를 입력하세요", "0");
+	if (row < 1 || column < 1) {
+		alert("줄 수나 행 수는 1 이상 입력하세요");
+		location.reload();
+	}
+	var num = 1;
+
+/*
+	document.write("<table border='1'>");
+	for (var i = 1; i <= row; i++) {
+		document.write("<tr>");
+		for (var j = 1; j <= column; j++) {
+			document.write("<td>" + num + "</td>");
+			num++;
+		}//for j
+		document.write("</tr>");
+	}//for i
+	document.write("</table>");
+*/
+
+	var t = "<table border='1'>";
+	for (var i = 1; i <= row; i++) {
+		t+="<tr>";
+		for (var j = 1; j <= column; j++) {
+			t+="<td>" + num + "</td>";
+			num++;
+		}
+		t+="</tr>";
+	}
+	t+="</table>";
+	
+	document.write(t);
+</script>
+</head>
+<body>
+
+</body>
+</html>

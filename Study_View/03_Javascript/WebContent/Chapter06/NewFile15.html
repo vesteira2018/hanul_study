@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+form {
+	width: 350px;
+	margin: 0px auto;
+}
+
+fieldset {
+	display: table;
+	margin: 0px auto;
+}
+
+label {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 180px;
+	height: 30px;
+}
+
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	function submitChk() {
+		var userId = document.getElementById("userId");
+		var userPw = document.getElementById("userPw");
+		var userEmail = document.getElementById("userEmail");
+		//유효성 검사
+		var regId = /^[a-z]\w{2,12}$/;
+		var regPw = /^[a-z]\w{8,12}$/;
+		var regEmail = /^\w{5,12}[a-z]@[a-z]{2,10}[\.][a-z]{2,3}[\.]?[a-z]{0,2}$/;
+		
+		if (!regId.test(userId.value)) {
+			alert("아이디의 형식이 맞지 않습니다.");
+			userId.value = "";
+			userId.focus();
+			return false;
+		}
+		
+		if (!regPw.test(userPw.value)) {
+			alert("비밀번호의 형식이 맞지 않습니다.");
+			userPw.value = "";
+			userPw.focus();
+			return false;
+		}
+		
+		if (!regEmail.test(userEmail.value)) {
+			alert("이메일의 형식이 맞지 않습니다.");
+			userEmail.value = "";
+			userEmail.focus();
+			return false;
+		}
+	}//submitChk()
+	
+	function resetChk() {
+		var result = confirm("회원가입을 취소하시겠습니까?");
+		if (result) {
+			userId.value = "";
+			userPw.value = "";
+			userEmail.value = "";
+			return false;
+		}
+	}
+}
+</script>
+</head>
+<body>
+	<form method="get" name="myForm"
+				onsubmit="return submitChk();"
+				onreset="return resetChk();">
+		<fieldset>
+			<legend>회원가입</legend>
+			<p>
+				<label for="userId">아&nbsp;&nbsp;이&nbsp;&nbsp;디</label>
+				<input type="text" name="userId"
+							 id="userId" placeholder="영문자로 시작하고 5~12글자" />
+			</p>
+			<p>
+				<label for="userPw">비밀&nbsp;번호</label>
+				<input type="password" name="userPw"
+							 id="userPw" placeholder="영문자로 시작하고 5~12글자"/>
+			</p>
+			<p>
+				<label for="userEmail">이&nbsp;&nbsp;메&nbsp;&nbsp;일</label>
+				<input type="text" name="userEmail"
+							 id="userEmail" placeholder="이메일을 입력하세요"/>
+			</p>
+			<p>
+				<input type="submit" value="회원가입" />
+				<input type="reset" value="가입취소" />
+			</p>
+		</fieldset>
+	</form>
+
+</body>
+</html>

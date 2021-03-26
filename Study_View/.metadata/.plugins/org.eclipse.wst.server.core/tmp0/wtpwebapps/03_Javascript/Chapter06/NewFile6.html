@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//변수 t에 문자형 데이터를 저장했다는 것은
+//다시 말하면 변수 t에 문자 객체를 참조시킨 것과 같다.
+	var t = "Hello Thank you Good luck to you";
+	document.write(t.charAt(16) + "<br />");	//G
+	
+	document.write(t.indexOf("you") + "<br />");	//12
+	
+	document.write(t.indexOf("you", 16) + "<br />");	//29
+
+	document.write(t.lastIndexOf("you") + "<br />");	//29
+
+	document.write(t.lastIndexOf("you", 25) + "<br />");	//29
+	
+	document.write(t.match("luck") + "<br />");	//luck
+	document.write(t.search("you") + "<br />");	//12
+	
+	document.write(t.substr(6, 11) + "<br />");
+	//Thank you G //SQL문법동일
+	document.write(t.substring(6, 11) + "<br />");
+	//Thank
+	
+	document.write(t.replace("you", "me") + "<br />");
+	//처음 나오는 문자만 치환
+	//Hello Thank me Good luck to you
+	document.write(t.toLowerCase() + "<br />");
+	//hello thank you good luck to you
+	document.write(t.toUpperCase() + "<br />");
+	//HELLO THANK YOU GOOD LUCK TO YOU
+	
+	document.write(t.length + "<br />");	//문자열의 개수 : 32
+	
+	var s = t.split(" ");
+	//공백으로 구분한 것을 배열로 지정
+	document.write(typeof(s) + "<br />");	//object
+	
+	for (var i in s) {
+		document.write(s[i] + "<br />");
+	}
+	
+	var str = "A";
+	var t = str.charCodeAt(0);
+	document.write(t + "<br />");	//65
+	document.write(String.fromCharCode(65) + "<br />");	//A
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

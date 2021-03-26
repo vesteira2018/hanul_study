@@ -1,0 +1,48 @@
+★ myBatis 개발환경 구축 : mybatis-3.x.x.jar 다운로드(https://blog.mybatis.org)
+○ com.hanul.mybatis package 생성 : mybatis 설정과 관련된 파일
+	- 1. db.properties 생성 : DB에 접속하기 위한 기본 정보
+	driver = oracle.jdbc.driver.OracleDriver
+	url = jdbc:oracle:thin:@127.0.0.1:1521:XE
+	username = hanul
+	password = 0000
+
+	- 2. SqlMapConfig.xml 생성 : myBatis FrameWork 핵심적인 설정 파일
+
+	- 3. Mapper.xml 생성 : 실제 SQL 문장을 작성하는 파일 ▶ SqlMapConfig.xml 등록(추가)
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE mapper
+ 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.hanul.mybatis.memberMapper.xml">
+		<!-- SQL 문장 작성 -->
+	</mapper>
+
+○ com.hanul.study package 생성 : DTO(VO) class, DAO class
+	- 1. DTO Class : 직렬화 (implements Serializable) ▶ SqlMapConfig.xml 등록(추가)
+	<typeAliases>
+		<typeAlias type="com.hanul.study.MemberDTO" alias="MemberDTO" />
+	</typeAliases>
+
+	- 2. DAO Class : SqlSessionFactory(sqlMapper)
+	private static SqlSessionFactory sqlMapper;
+	static {
+		String resource = "com/hanul/mybatis/SqlMapConfig.xml";
+		try {
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			sqlMapper = new SqlSessionFactoryBuilder().build(inputStream);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("SqlSessionFactory Exception!");
+		}//try-catch
+	}//static(초기화블럭)
+
+☆ MemberMain.html → insert.jsp → MemberNAO.memrberInsert(dto) → memberMapper.xmo →
+	MemberDAO → insert.jsp → list.jsp
+
+☆ Persitent Exception
+- db.properties
+- SqlMapConfig.xml
+- memberMapper.xml
+- MemberDAO static{}
+
+File Name Rename : Project Clean / Server Clean

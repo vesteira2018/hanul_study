@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+		$("#listZone").append("<li>새 내용 추가2</li>");
+		$("#listZone").prepend("<li>새 내용 추가1</li>");
+		
+		$("<li>새 내용 추가3</li>").appendTo("#listZone");
+		$("<li>새 내용 추가0</li>").prependTo("#listZone");
+		
+		$("#line1").remove();
+		$("#line2").empty();
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<ul id="listZone">
+		<li id="line1">내용1</li>
+		<li id="line2">내용2</li>
+		<li>내용3</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OMR Main</title>
+
+<style type="text/css">
+	@import url("SubFiles/css/OMR_Main.css");
+</style>
+ 
+ <script>
+ function fnSubmit() {
+		if (confirm("제출하시겠습니까?")) {
+			return true;
+		}
+			return false;
+	}//fnSubmit()
+
+	function fnReset() {
+		if (confirm("입력하신 정보를 모두 초기화하시겠습니까?")) {
+			return true;
+		}//if
+			return false;
+	}//fnReset()
+ 		
+ </script>
+ 
+</head>
+ <body>
+<div>
+	<h2>[ O M R&nbsp;&nbsp;&nbsp;&nbsp;S H E E T ]</h2>
+	<form action="Omr.jsp" method="post"
+		onsubmit="return fnSubmit()" onreset="return fnReset()">
+		<table>
+			<tr>
+				<th>응&nbsp;&nbsp;시&nbsp;&nbsp;자</th>
+				<td colspan="7"><input type="text" name="name" required="required" /></td>
+			</tr>
+			
+			<tr>
+				<th rowspan="2">구&nbsp;&nbsp;분</th>
+				<th rowspan="2">문 제 번 호</th>
+				<th rowspan="2">배 점</th>
+				<th colspan="4">답&nbsp;&nbsp;란</th>
+			</tr>
+ 
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+			</tr>
+ 
+		 	 <tr>
+				<th rowspan="10">모바일 앱 개발 전문가</th>
+				<th>1</th>
+				<th>6.0</th>
+				<td><input type="radio"  name="check1" value="1" id="check1">
+				<label for="check1"></label></td>
+				<td><input type="radio"  name="check1" value="2" id="check2">
+				<label for="check2"></label></td>
+				<td><input type="radio"  name="check1" value="3" id="check3">
+				<label for="check3"></label></td>
+				<td><input type="radio"  name="check1" value="4" id="check4">
+				<label for="check4"></label></td>
+			</tr>
+			
+			<tr>
+				<th>2</th>
+				<th>7.5</th>
+				<td><input type="radio"  name="check2" value="1" id="check5">
+				<label for="check5"></label></td>
+				<td><input type="radio"  name="check2" value="2" id="check6">
+				<label for="check6"></label></td>
+				<td><input type="radio"  name="check2" value="3" id="check7">
+				<label for="check7"></label></td>
+				<td><input type="radio"  name="check2" value="4" id="check8">
+				<label for="check8"></label></td>
+			</tr>
+		
+			<tr>
+				<th>3</th>
+				<th>10.0</th>
+				<td><input type="radio"  name="check3" value="1" id="check9">
+				<label for="check9"></label></td>
+				<td><input type="radio"  name="check3" value="2" id="check10">
+				<label for="check10"></label></td>
+				<td><input type="radio"  name="check3" value="3" id="check11">
+				<label for="check11"></label></td>
+				<td><input type="radio"  name="check3" value="4" id="check12">
+				<label for="check12"></label></td>
+			</tr>
+
+			<tr>
+				<th>4</th>
+				<th>6.5</th>
+				<td><input type="radio"  name="check4" value="1" id="check13">
+				<label for="check13"></label></td>
+				<td><input type="radio"  name="check4" value="2" id="check14">
+				<label for="check14"></label></td>
+				<td><input type="radio"  name="check4" value="3" id="check15">
+				<label for="check15"></label></td>
+				<td><input type="radio"  name="check4" value="4" id="check16">
+				<label for="check16"></label></td>
+			</tr>
+
+			<tr>
+				<th>5</th>
+				<th>11.5</th>
+				<td><input type="radio"  name="check5" value="1" id="check17">
+				<label for="check17"></label></td>
+				<td><input type="radio"  name="check5" value="2" id="check18">
+				<label for="check18"></label></td>
+				<td><input type="radio"  name="check5" value="3" id="check19">
+				<label for="check19"></label></td>
+				<td><input type="radio"  name="check5" value="4" id="check20">
+				<label for="check20"></label></td>
+			</tr>
+
+			<tr>
+				<th>6</th>
+				<th>12.5</th>
+				<td><input type="radio"  name="check6" value="1" id="check21">
+				<label for="check21"></label></td>
+				<td><input type="radio"  name="check6" value="2" id="check22">
+				<label for="check22"></label></td>
+				<td><input type="radio"  name="check6" value="3" id="check23">
+				<label for="check23"></label></td>
+				<td><input type="radio"  name="check6" value="4" id="check24">
+				<label for="check24"></label></td>
+			</tr>
+
+			<tr>
+				<th>7</th>
+				<th>9.0</th>
+				<td><input type="radio"  name="check7" value="1" id="check25">
+				<label for="check25"></label></td>
+				<td><input type="radio"  name="check7" value="2" id="check26">
+				<label for="check26"></label></td>
+				<td><input type="radio"  name="check7" value="3" id="check27">
+				<label for="check27"></label></td>
+				<td><input type="radio"  name="check7" value="4" id="check28">
+				<label for="check28"></label></td>
+			</tr>
+
+			<tr>
+				<th>8</th>
+				<th>13.5</th>
+				<td><input type="radio"  name="check8" value="1" id="check29">
+				<label for="check29"></label></td>
+				<td><input type="radio"  name="check8" value="2" id="check30">
+				<label for="check30"></label></td>
+				<td><input type="radio"  name="check8" value="3" id="check31">
+				<label for="check31"></label></td>
+				<td><input type="radio"  name="check8" value="4" id="check32">
+				<label for="check32"></label></td>
+			</tr>
+		
+			<tr>
+				<th>9</th>
+				<th>9.5</th>
+				<td><input type="radio"  name="check9" value="1" id="check33">
+				<label for="check33"></label></td>
+				<td><input type="radio"  name="check9" value="2" id="check34">
+				<label for="check34"></label></td>
+				<td><input type="radio"  name="check9" value="3" id="check35">
+				<label for="check35"></label></td>
+				<td><input type="radio"  name="check9" value="4" id="check36">
+				<label for="check36"></label></td>
+			</tr>
+
+			<tr>
+				<th>10</th>
+				<th>14.0</th>
+				<td><input type="radio"  name="check10" value="1" id="check37">
+				<label for="check37"></label></td>
+				<td><input type="radio"  name="check10" value="2" id="check38">
+				<label for="check38"></label></td>
+				<td><input type="radio"  name="check10" value="3" id="check39">
+				<label for="check39"></label></td>
+				<td><input type="radio"  name="check10" value="4" id="check40">
+				<label for="check40"></label></td>
+			</tr>
+
+			<tr>
+					<td colspan="7">
+						<input type="submit" value="제출하기"/>
+						<input type="reset" value="입력취소"/>
+						<Input type="button" onclick="location.href='TestMain.html'" value="메인페이지로" />
+					</td>
+			</tr> 
+		</table>
+	</form>
+</div>
+ 
+</body>
+</html>

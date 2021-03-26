@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	background-color: black;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+}
+
+h1 {
+	color: aqua;
+}
+
+</style>
+<script type="text/javascript">
+	for (var i = 2; i <= 9; i++) {
+		document.write("<h1>" + i + "단</h1>");
+		for (var j = 1; j <= 9; j++) {
+			if ((i * j) < 10) {
+			document.write(i + " x " + j + " = 0" + (i * j) + "<br />");
+			} else {
+			document.write(i + " x " + j + " = " + (i * j) + "<br />");
+			}
+		}//for j
+	}//for i
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

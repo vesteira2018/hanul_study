@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var userHeight = prompt("키를 입력하세요", "");
+	var userWeight = prompt("몸무게를 입력하세요", "");
+	
+	var averageWeight = (userHeight - 100) * 0.9;
+	var lowWeight = (userHeight - 100) * 0.75;
+	var overWeight = (userHeight - 100) * 1.05;
+	
+	alert("적정 몸무게는 " + averageWeight + "입니다.");
+	
+	if (userWeight >= overWeight) {
+		alert("당신의 키는 " + userHeight + "이고, 당신의 몸무게는 " + userWeight
+					+ "로서\n과제중입니다.");
+	} else if (userWeight >= averageWeight) {
+		alert("당신의 키는 " + userHeight + "이고, 당신의 몸무게는 " + userWeight
+					+ "로서\n정상제중입니다.");
+	} else {
+		alert("당신의 키는 " + userHeight + "이고, 당신의 몸무게는 " + userWeight
+					+ "로서\n저제중입니다.");
+	}
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

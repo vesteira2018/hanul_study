@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var db_id = "aaa";
+	var db_pw = "aaa";
+	
+	var user_id = prompt("아이디를 입력하세요", "");
+	var user_pw = prompt("비밀번호를 입력하세요", "");
+	if (user_id === db_id && user_pw === db_pw) {
+		document.write(user_id + "님 환영합니다!");
+	} else {
+		alert("아이디나 비밀번호가 일치하지 않습니다.");
+		location.reload();
+	}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

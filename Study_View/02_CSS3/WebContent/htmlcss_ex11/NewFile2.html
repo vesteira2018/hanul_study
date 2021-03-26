@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- border : 테두리
+		 border-width - 두께 : thin, medium, thick, em
+		 border-style - 형태 : none, hidden, dotted, dashed, solid, double, groove
+		 border-color - 색깔 
+-->
+<style type="text/css">
+
+div {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	background-color: black;
+	font-weight: bold;
+	color: white;
+}							
+
+div:nth-child(1) {
+	border-width: 5px;
+	border-style: dashed;
+	border-color: red;
+}
+
+</style>
+</head>
+<body>
+	<div>border테두리1</div>
+	<div>border테두리2</div>
+	<div>border테두리3</div>
+</body>
+</html>

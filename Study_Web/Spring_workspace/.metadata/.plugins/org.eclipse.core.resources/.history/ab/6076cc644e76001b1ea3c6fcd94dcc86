@@ -1,0 +1,25 @@
+package visual;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import common.LowerKeyMap;
+
+@Service
+public class VisualServiceImpl implements VisualService {
+	@Autowired private VisualDAO dao;
+
+	@Override
+	public List<LowerKeyMap> department_analysis() {
+		return dao.department_analysis();
+	}
+
+	@Override
+	public List<HashMap<String, Object>> hirement_analysis() {
+		return dao.hirement_analysis();
+	}
+
+}

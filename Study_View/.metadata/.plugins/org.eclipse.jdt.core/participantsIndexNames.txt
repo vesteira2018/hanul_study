@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+D:\Study_View\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2065374089.index
+\05_Ajax\src

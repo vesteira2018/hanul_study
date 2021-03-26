@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var location = prompt("지역번호가 궁금한 지역명을 적어주세요\n" + 
+			"서울, 부산, 대구, 인천, 광주, 대전, 울산, 제주,\n" + 
+			"경기, 강원, 충남, 충북, 경북, 경남, 전남, 전북");
+	
+		alert("서울");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

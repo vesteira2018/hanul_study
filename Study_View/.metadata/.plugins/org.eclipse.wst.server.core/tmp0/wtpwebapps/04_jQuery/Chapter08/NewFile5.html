@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+		$("#user_name").focus();
+// 		$("#user_id").focus(function() {
+// 			$(this).val("");
+// 		});
+// 		$("#user_id").blur(function() {
+// 			$(this).val("아이디 입력");
+// 		});
+		
+		$("#user_id").focus(function() {
+			$(this).val("");
+		}.blur(function() {
+			$(this).val("아이디 입력");
+		});
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<p>
+		이&nbsp;&nbsp;&nbsp;름 : 
+		<input type="text" name="user_name" id="user_name" />
+	</p>
+	<p>
+		아이디 : 
+		<input type="text" name="user_id" id="user_id" value="아이디 입력" />
+	</p>
+</body>
+</html>

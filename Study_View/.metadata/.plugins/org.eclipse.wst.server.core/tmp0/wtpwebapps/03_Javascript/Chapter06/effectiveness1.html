@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var name = prompt("당신의 이름은?", "");
+	var regName = /^[가-힣]{2,5}$/;
+
+	while (true) {
+		if (!regName.test(name)) {
+			alert("이름 형식이 잘못되었습니다!");
+			name = prompt("당신의 이름은?", "");
+		} else {
+			break;
+		}//if
+	}//while
+
+	var num = prompt("당신의 핸드폰 번호는?", "");
+	var regNum = /^(010)\d{4}\d{4}$/;
+	
+	while (true) {
+		if (!regNum.test(num)) {
+			alert("핸드폰 번호 형식이 잘못되었습니다!");
+			num = prompt("당신의 핸드폰 번호는?", "");
+		} else {
+			break;
+		}//if
+	}//while
+		
+	var email = prompt("당신의 이메일 주소는?", "");
+	var regEmail = /^\w{5,12}@[a-z]{2,10}[\.][a-z]{2,3}[\.]{0,2}$/;
+
+	while (true) {
+		if (!regEmail.test(email)) {
+			alert("이메일 형식이 잘못되었습니다!");
+			email = prompt("당신의 이메일 주소는?", "");
+		} else {
+			break;
+		}//if
+	}//while
+		
+	document.write(name + "<br />");
+	document.write(num + "<br />");
+	document.write(email + "<br />");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.page {
+		width: 500px;
+		height: 300px;
+		background-color: yellow;
+		overflow: hidden;
+		transition-duration: 1s;
+	}
+	
+	input[type="checkbox"]:checked+div {
+		height: 0px;
+	}
+</style>
+</head>
+<body>
+	<label for="hide">숨기기</label>
+	<input type="checkbox" id="hide" />
+	<div class="page">
+		<h1>Lorem Ipsum</h1>
+		<p>Lorem Ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+</body>
+</html>

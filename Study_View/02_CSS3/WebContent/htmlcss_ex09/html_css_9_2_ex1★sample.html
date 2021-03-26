@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3 Selector Basic</title>
+<!-- 일반구조선택자 : 왕 꿈틀이 만들기 -->
+<!-- display : block
+넓이와 높이를 모두 갖는다.(줄바꿈 시킬 수 있음)
+width, height, margin, align 속성 적용됨						
+즉, 크기지정 가능 -->
+<style type="text/css">
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+ul {
+	padding: 0px;
+}
+
+li {
+	list-style: none;
+}
+
+#mainMenu {
+	overflow: hidden;
+}
+
+#mainMenu>li {
+	float: left;
+}
+
+#mainMenu>li>a {
+	padding: 10px 15px;
+	display: block;
+}
+
+#mainMenu>li:nth-child(2n+1)>a {
+	background-color: green;
+}
+
+#mainMenu>li:nth-child(2n)>a {
+	background-color: red;
+}
+
+#mainMenu>li:first-child>a {
+	border-radius: 20px 0px 0px 20px;
+}
+
+#mainMenu>li:last-child>a {
+	border-radius: 0px 20px 20px 0px;
+}
+
+.subMenu {
+	display: none;
+	background-color: #cccccc;
+	text-align: center;
+}
+
+#mainMenu>li>a:hover+ul {
+	display: block;
+}
+
+.subMenu:hover {
+	display: block;
+}
+
+.subMenu li {
+	padding: 5px 0px;
+}
+
+.subMenu>li:hover {
+	background-color: white;
+}
+
+.subMenu>li>a:hover {
+	color: blue;
+}
+
+.subMenu>li>a:active {
+	color: red;
+}
+
+div {
+	width: 640px;
+	margin: 0px auto;
+}
+
+</style>
+</head>
+<body>
+<div> <!-- ☜ 가운데 정렬 시키려고 일부러 만듦 -->
+	<ul id="mainMenu">
+		<li><a href="http://www.naver.com">네&nbsp;이&nbsp;버</a>
+			<ul class="subMenu">
+				<li><a href="#">메일</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.google.com">&nbsp;구&nbsp;글&nbsp;</a>				
+			<ul class="subMenu">
+				<li><a href="#">메일</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.youtube.com">유&nbsp;튜&nbsp;브</a>
+			<ul class="subMenu">
+				<li><a href="#">메일</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.daum.net">&nbsp;다&nbsp;음&nbsp;</a>
+			<ul class="subMenu">
+				<li><a href="#">메일</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</li>
+		<li><a href="http://news.naver.com">네이버뉴스</a>
+			<ul class="subMenu">
+				<li><a href="#">메일</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.facebook.com">페이스&nbsp;북</a>
+			<ul class="subMenu">
+				<li><a href="#">메일</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.twitter.com">트&nbsp;위&nbsp;터</a>
+			<ul class="subMenu">
+				<li><a href="#">메일</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

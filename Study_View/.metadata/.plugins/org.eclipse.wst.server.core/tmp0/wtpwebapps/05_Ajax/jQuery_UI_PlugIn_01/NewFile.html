@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="ui-lightness/jquery-ui.css" />
+<style type="text/css">
+body {
+	font-size: 62.5%;
+}
+
+h1 {
+	text-align: center;
+}
+
+input[type="text"], label {
+	margin-bottom: 12px;
+	padding: 0.4em;
+	width: 95%;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="ui-lightness/jquery-ui.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#open_button").click(function() {
+			$("#dialog").dialog("open");
+		});
+		
+		$("#dialog").dialog({
+			autoOpen: false,
+			buttons: {
+				확인 : function() {
+					var event_name = $("#event_name").val();
+					var event_date = $("#event_date").val();
+					$("#output").append("<h1>" + event_name + " : " + event_date + "</h1>");
+				
+					$("#event_name").val("");
+					$("#event_date").val("");
+					$("#dialog").dialog("close");
+				},
+				초기화 : function() {
+					$("#event_name").val("");
+					$("#event_date").val("");
+					$("#event_name").focus();
+				},
+				취소 : function() {
+					$("#event_name").val("");
+					$("#event_date").val("");
+					$("#dialog").dialog("close");
+				},
+				리셋 : function() {
+					$("#event_name").val("");
+					$("#event_date").val("");
+					$("#output").html("");
+					$("#dialog").dialog("close");
+				}
+			},
+			modal: true
+		});
+		
+		$("#event_date").datepicker({
+			dateFormat: "yy년 mm월 dd일",
+			numberOfMonths: 3
+		});
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1 id="open_button">일정 생성</h1>
+	<hr />
+	<div id="output"></div>
+	
+	<div id="dialog" title="jQuery UI dialog">
+		<h1>Hello jQuery UI ... !</h1>
+		
+		<label for="event_name">일정이름</label>
+		<input type="text" id="event_name" />
+		
+		<label for="event_date">날짜</label>
+		<input type="text" id="event_date" />
+	</div>
+</body>
+</html>

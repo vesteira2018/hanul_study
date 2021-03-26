@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#btn1").mouseover(function() {
+			alert("btn1");
+		});
+		
+		$("#btn2").on("mouseover",function() {
+			alert("btn2");
+		});
+		
+		$("#btn3").on("mouseover focus",function() {
+			alert("btn3");
+		});
+		
+		$("#btn4").on({
+			"mouseover focus" : function() {
+				alert("btn4");
+			}// mouseover focus
+		});//btn4
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<p>
+		<a href="#" id="btn1">버튼1</a>
+	</p>
+	<p>
+		<a href="#" id="btn2">버튼2</a>
+	</p>
+	<p>
+		<a href="#" id="btn3">버튼3</a>
+	</p>
+	<p>
+		<a href="#" id="btn4">버튼4</a>
+	</p>
+</body>
+</html>

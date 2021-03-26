@@ -1,0 +1,75 @@
+package com.member.study;
+
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class MemberDAO {
+	//SqlSessionFactory
+	private static SqlSessionFactory sqlMapper;
+	static {
+		String resource = "com/hanul/mybatis/SqlMapConfig.xml";
+		try {
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			sqlMapper = new SqlSessionFactoryBuilder().build(inputStream);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("SqlSessionFactory Exception!");
+		}//try-catch
+	}//static
+	
+	//회원가입
+	public int joinMember(MemberDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		int succ = 0;
+		succ = session.insert("joinMember", dto);
+		session.commit();
+		session.close();
+		
+		return succ;
+	}//joinMember()
+	
+	//회원여부파악
+	public int isMember(MemberDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		MemberDTO isDto = null;
+		isDto = session.selectOne("isMember", dto);
+		session.close();
+		
+		int result = -1;		//아이디가 존재하지 않는다
+		if (isDto != null) {	//아이디가 존재
+			if (isDto.getMember_pw().equals(dto.getMember_pw())) {
+				result = 1;		//비밀번호 일치
+			} else {
+				result = 0;		//비밀번호 불일치
+			}
+		} 
+		
+		return result;
+	}//isMember()
+	
+	//전체회원 목록 검색
+	public List<MemberDTO> getAllMember() {
+		SqlSession session = sqlMapper.openSession();
+		List<MemberDTO> list = null;
+		list = session.selectList("getAllMember");
+		session.close();
+		
+		return list;
+	}//getAllMember()
+	
+	//회원정보 삭제
+	public int deleteMember(String member_id) {
+		SqlSession session = sqlMapper.openSession();
+		int succ = 0;
+		succ = session.delete("deleteMember", member_id);
+		session.commit();
+		session.close();
+		
+		return succ;
+	}
+}//class

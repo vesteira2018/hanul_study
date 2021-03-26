@@ -1,0 +1,90 @@
+CSS3
+
+- 상위 대상에는 padding, 하위 대상에는 margin
+- :nth-child(n)
+- list tag 양식 지우기
+	ul {
+		overflow: hidden;
+	}
+	li {
+		list-style: none;
+		float: left;
+	}
+
+- inline tag 블럭화시키기 / display: hidden;을 보여주기
+	display: block;
+
+- 대상을 상하좌우 가운데로 정렬하기
+	position: relative; 상위태그
+
+	position: absolute; 하위태그
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+- border 겹치지 않게하기 (예시. 밑 상자 border top을 이용)
+1.	border-top: none;
+2.	margin-top: -1px;
+
+- 사진 넣기 (html : img[src])
+	background-image: url("filename.jpg")
+
+- display: flex;
+	상위태그에서 사용하면 자동으로 나열시킨다
+
+- 실제적인 크기는 margin을 포함한다
+	각각 margin의 크기를 정확히 보려면 display: inline-block;, block;을 번갈아 사용
+
+- 박스의 크기 조정
+	box-sizing: border-box; border까지 크기가 고정
+	box-sizing: content-box; content까지 크기가 고정 (default)
+
+- height만큼 상하가운데 정렬
+	display: block;
+	line-height: height px;
+
+- <hr /> 선색깔 입히기
+	background-color: color;
+	border: 0px;
+	height: 1px;
+
+- position
+	position: absolute; (상위 대상에 절대적 위치)
+	position: fixed; (보이는 화면에서 고정된 위치)
+	position: static; (기본값, 위치 변화가 없음)
+	position: relative; (위 position 위치값을 고려한 뒤 위치)
+
+- 겹친 순서를 조정하기
+	z-index: number; (숫자가 클 수록 위에 위치)
+
+- 박스 그림자 효과
+	box-shadow: npx npx npx color;
+	x-position, y-position, blur
+	inset : 안으로 그림자 설정
+
+- 이미지의 원하는 위치에 링크 걸기 (html)
+	<img src="image.jpg" usemap="#imagemap" />
+	<map name="imagemap">
+		<area shape="" coords="">
+	</map>
+	
+	shape : circle(원) coords="중심점의 x, 중심점의 y, 반지름"
+	shape : rect(사각형) coords="좌상점의 x, 좌상점의 y, 우하점의 x, 우하점의 y"
+	shape : poly(다각형) coords="점의 x, 점의 y, ...."
+
+- 애니메이션 효과 : @keyframes
+	from {} to {}
+
+	animation-name: 애니메이션 이름;
+	animation-duration: 재생 시간;
+	animation-iteration-count: 반복 횟수;
+	animation-direction: 애니메이션 진행 방향;
+	animation-timing-function:
+	animation-play-state: 애니메이션 재생 상태;
+
+- 넘친 글씨 생략하기
+	display: block;
+	width: n px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; 

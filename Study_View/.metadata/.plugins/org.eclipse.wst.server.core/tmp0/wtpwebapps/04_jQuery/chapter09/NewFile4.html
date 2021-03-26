@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+h1, h2, h3 {
+	font-size: 100%;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+h1 {
+	background-color: red;
+}
+
+h2 {
+	background-color: orange;
+}
+
+h3 {
+	background-color: aqua;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("h1").animate({
+			marginLeft: "250px"
+		}, 5000);
+		
+		$("h2").animate({
+			marginLeft: "250px",
+			opacity: 0.3,
+			width: "200px"
+		}, 5000);
+		
+		$("h3").animate({
+			marginLeft: "250px"
+		}, 3000).animate({
+			marginLeft: "100px"
+		}, 2000);
+	}); //ready
+</script>
+</head>
+<body>
+	<h1>CONTENT 1</h1>
+	<h2>CONTENT 2</h2>
+	<h3>CONTENT 3</h3>
+</body>
+</html>

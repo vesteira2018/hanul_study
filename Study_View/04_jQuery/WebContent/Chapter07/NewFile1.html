@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+// 		$("#ttl").css("border","1px solid red")
+// 		.css("background-color", "yellow");
+
+ 		$("#ttl").css({
+ 			"border": "1px solid red",
+	 		"background-color":"yellow"
+	 	});
+ 		
+ 		$(".direct").css({
+ 			"border": "1px solid red",
+ 			"background-color":"yellow"
+ 		});
+ 		
+ 		$("h3:first").css({
+ 			"border": "1px solid red",
+			"background-color":"lime"
+ 		});
+ 		
+ 		$("h3:last").css({
+ 			"border": "1px solid red",
+			"background-color":"black",
+			"color":"white"
+ 		});
+ 			
+ 		$("h1,h2").css({
+ 			"font-style":"italic"
+ 		});
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1 id="ttl">제이쿼리</h1>
+	<h2 class="direct">직접 선택자 및 관계 선택자</h2>
+	<h3>직접 선택자</h3>
+	<h3>관계 선택자</h3>
+</body>
+</html>

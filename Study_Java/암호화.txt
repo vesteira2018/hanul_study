@@ -1,0 +1,10 @@
+송신				수신
+평문 =========암호문==========> 평문
+       암호화	KEY    복호화
+	     Byte Type
+
+암호화 == 복호화 : 대칭키 암호화(비밀키)
+암호화 != 복호화 : 비대칭키 암호화(공개키)
+
+DataInputStream, DataOutputStream ▶ 기본데이터타입, 문자열
+ObjectInputStream, ObjectOutputStream ▶ 객체(상태정보) : 직렬화

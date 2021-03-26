@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+
+div {
+	border: 1px solid red;
+	text-align: center;
+	font-weight: bold;
+}
+
+#wrap {
+	width: 800px;
+	margin: 0px auto;
+	padding: 5px;
+}
+
+#header, #footer {
+	height: 100px;
+	line-height: 100px;
+}
+
+#nav {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#nav ul {
+	overflow: hidden;
+	padding: 0px;
+	display: table;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+#nav ul li {
+	list-style: none;
+	float: left;
+}
+
+#nav ul li a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	border: 1px solid red;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: -1px;
+}
+
+#nav ul li:nth-child(1) a{
+	margin-left: 0px;
+}
+
+#content {
+	overflow: hidden;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+#section {
+	float: left;
+	width: 600px;
+	height: 400px;
+	border: 1px solid red;
+	padding: 5px;
+}
+
+#banner {
+	float: right;
+	width: 159px;
+	height: 400px;
+	border: 1px solid red;
+	padding: 5px;
+}
+
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">HEADER</div>
+
+		<div id="nav">
+			<p>NAVIGATION</p>
+			<ul>
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+				<li><a href="#">menu4</a></li>
+				<li><a href="#">menu5</a></li>
+			</ul>
+		</div>
+
+		<div id="content">
+			<div id="section">SECTION</div>
+			<div id="banner">BANNER</div>
+		</div>
+
+		<div id="footer">FOOTER</div>
+	</div>
+</body>
+</html>

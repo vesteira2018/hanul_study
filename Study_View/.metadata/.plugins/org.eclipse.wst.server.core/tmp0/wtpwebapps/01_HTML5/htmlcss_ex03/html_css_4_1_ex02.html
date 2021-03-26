@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 Basic</title>
+<meta charset="utf-8">
+<link href="https://vjs.zencdn.net/4.9/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/4.9/video.js"></script> <!-- 이 버전만 가능 다른건 안됨 -->
+</head>
+<body>
+  <video width="640" height="360" controls="controls" 
+  class="video-js vjs-default-skin" data-setup="{}">
+	  <source src="wildlife.mp4" type="video/mp4" />
+	  <source src="wildlife.webm" type="video/webm" />
+	  
+	  <!-- <track></track> 태그 : video 태그에 자막을 표시할 때 사용, 크롬에서는 *.vtt파일만 지원 -->
+	  <track kind="subtitles" src="wildlife.vtt" srclang="ko" label="Korean" default/>
+	  <track kind="subtitles" src="wildlife.vtt" srclang="en" label="English" />
+	  <track kind="subtitles" src="wildlife.vtt" srclang="jp" label="Japanese" />
+	  <track kind="subtitles" src="wildlife.vtt" srclang="ch" label="Chinese" />
+  </video>
+</body>
+</html>

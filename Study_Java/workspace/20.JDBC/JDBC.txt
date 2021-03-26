@@ -1,0 +1,24 @@
+○ JDBC : Java DataBase Connectivity
+	- JAVA와 DB(Oracle SQL)를 연동하는 프레임워크(FrameWork)
+	
+○ JDBC 준비사항(프레임워크 구축)
+	- JAVA 개발환경(JDK, JRE)이 구축
+	- DataBase(Oracle SQL) 설치
+	- JAVA와 DB를 연동할 수 있는 API(라이브러리) 설치 : ojdbc6.jar
+		▶ C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
+		
+○ 외부 라이브러리(External API) 등록 : 정적로딩
+	1. 모든 프로젝트 동작
+		- SQL(DB)에서 제공한 API(라이브러리)를 복사 : ojdbc6.jar
+		- JAVA 설치된 폴더 > jre > lib > ext : 붙여넣기
+		- Eclipse 재시작
+	
+	2. 현재 프로젝트에서만 동작(권장)
+		- 프로젝트 명 > 마우스 오른키 > Build Path > Configure Build Path...
+		- Libraries Tab > Add External JARs... > API 선택 > Apply and Close
+		
+○ JDBC 주요한 클래스/인터페이스
+	- Connect : Java와 DB를 연결해주는 객체
+	- Statement, PreparedStatement : SQL 문장(Query) 전송 객체
+	- ResultSet : 결과객체(select 쿼리)
+	- 

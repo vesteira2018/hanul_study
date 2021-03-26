@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var userPw = document.getElementById("userPw");
+		var userConfirmPw = document.getElementById("userConfirmPw");
+		
+		document.myForm1.onsubmit = function() {
+			if (!userPw.value) {
+				alert("비밀번호를 입력하세요.");
+				userPw.focus();
+			} else {
+				userConfirmPw.value = userPw.value;
+				return false;
+			}//if
+		}//onsubmit
+		
+		document.myForm2.allChk.onclick = function() {
+			var allChk = document.myForm2.allChk;
+			if (allChk.checked) {
+				document.myForm2.subject1.checked = true;
+				document.myForm2.subject2.checked = true;
+				document.myForm2.subject3.checked = true;
+			} else {
+				document.myForm2.subject1.checked = false;
+				document.myForm2.subject2.checked = false;
+				document.myForm2.subject3.checked = false;
+			}//if
+		}//allChk.onclick
+		
+		document.myForm2.onsubmit = function() {
+			var accept = document.myForm2.accept;
+			if (!accept.checked) {
+				alert("약관에 동의하셔야 합니다.");
+				accept.focus();
+				return false;
+			} else {
+				alert("회원가입이 완료되었습니다.");
+			}
+		}//onsubmit
+		
+		
+	}//onload
+
+</script>
+
+</head>
+<body>
+	<form method="get" name="myForm1">
+		<fieldset>
+			<legend>폼 요소 1</legend>
+			<p>
+				<label for="userPw">비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="password" name="userPw" id="userPw" autofocus="autofocus" />
+				<input type="submit" value="비밀번호확인" />
+			</p>
+			<p>
+				<label for="userConfirmPw">비밀번호확인</label>
+				<input type="text" name="userConfirmPw" id="userConfirmPw" disabled="disabled" />
+			</p>
+		</fieldset>
+	</form>
+	
+	<form method="get" name="myForm2">
+		<fieldset>
+			<legend>폼 요소 2</legend>
+			<div id="terms">
+				회사는 법령이 정하는 바에 따라"회원"의 개인정보를 보호하기 위해 노력합니다.
+				개인정보의 보호 및 사용에 대해서는 관련법 및 회사의 개인정보취급방침이 적용됩니다.
+			</div>
+			<p>
+				<input type="checkbox" name="accept" id="accept" />
+				<label for="accept">약관에 동의합니다.</label>
+			</p>
+			<p>
+				<input type="checkbox" name="allChk" id="allChk" />
+				<label for="allChk">전체선택</label>
+			<br />
+				<input type="checkbox" name="subject1" id="subject1" value="s1" />
+				<label for="subject1">과목1</label>
+			<br />
+				<input type="checkbox" name="subject2" id="subject2" value="s2" />
+				<label for="subject2">과목2</label>
+			<br />
+				<input type="checkbox" name="subject3" id="subject3" value="s3" />
+				<label for="subject3">과목3</label>
+			<br />
+				<input type="submit" value="등록완료" />
+				<input type="reset" value="등록취소" />
+			</p>
+		</fieldset>
+	</form>
+
+</body>
+</html>

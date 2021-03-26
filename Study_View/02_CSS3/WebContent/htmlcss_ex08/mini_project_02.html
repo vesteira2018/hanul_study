@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#header, #content, #footer {
+	overflow: hidden;
+	width: 1000px;
+	margin: 0px auto;
+}
+
+	#header .left_space {
+		float: left;
+		width: 150px;
+		height: 150px;
+		background-color: red;
+		border-radius: 30px 0px;
+		border: 1px solid black;
+	}
+	#header .center_space {
+		float: left;
+		width: 694px;
+		height: 150px;
+		background-color: green;
+		border-radius: 0px 0px 30px 30px;
+		border: 1px solid black;
+	}
+	#header .right_space {
+		float: left;
+		width: 150px;
+		height: 150px;
+		background-color: blue;
+		border-radius: 0px 30px;
+		border: 1px solid black;
+	}
+	
+	#content .left_space {
+		float: left;
+		width: 150px;
+		height: 300px;
+		background-color: red;
+		border-radius: 0px 30px 30px 0px;
+		border: 1px solid black;
+	}
+	#content .center_space {
+		float: left;
+		width: 694px;
+		height: 300px;
+		background-color: green;
+		border-radius: 30px;
+		border: 1px solid black;
+	}
+	#content .right_space {
+		float: left;
+		width: 150px;
+		height: 300px;
+		background-color: blue;
+		border-radius: 30px 0px 0px 30px;
+		border: 1px solid black;
+	}
+	
+	#footer .left_space {
+		float: left;
+		width: 150px;
+		height: 150px;
+		background-color: red;
+		border-radius: 0px 30px;
+		border: 1px solid black;
+	}
+	#footer .center_space {
+		float: left;
+		width: 694px;
+		height: 150px;
+		background-color: green;
+		border-radius: 30px 30px 0px 0px;
+		border: 1px solid black;
+	}
+	#footer .right_space {
+		float: left;
+		width: 150px;
+		height: 150px;
+		background-color: blue;
+		border-radius: 30px 0px;
+		border: 1px solid black;
+	}
+	
+#content ul {
+	overflow: hidden;
+}
+#content ul li {
+	float: left;
+	list-style: none;
+}
+#content ul li a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 5px 40px;
+}
+#content .hiseoul {
+	padding: 10px;
+}
+#content .hiseoul h1{
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+	<div id="header">
+		<div class="left_space"></div>
+		<div class="center_space"></div>
+		<div class="right_space"></div>
+	</div>
+
+	<div id="content">
+		<div class="left_space"></div>
+		<div class="center_space">
+			<div>
+				<ul>
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+				</ul>
+			</div>
+			<div class="hiseoul">
+				<h1>하이서울브랜드</h1>
+				<p>서울시와 서울산업진흥원(SBA)이 공동으로 지원하는 하이 서울브랜드 사업은 우수한 기술력과 상품력을 보유하고
+					있으나 고유브랜드 육성에 어려움을 겪고 있는 우수기업들이 서울시가 인정한 기업 공동브랜드인 하이서울브랜드를 활용하여 제품
+					경쟁력을 강화할 수 있도록 각종 홍보 마케팅을 지원하는 사업입니다.</p>
+			</div>
+		</div>
+
+		<div class="right_space"></div>
+	</div>
+
+	<div id="footer">
+		<div class="left_space"></div>
+		<div class="center_space"></div>
+		<div class="right_space"></div>
+	</div>
+</body>
+</html>

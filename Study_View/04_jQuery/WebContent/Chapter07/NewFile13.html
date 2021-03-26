@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+		//$("#my_name").val($("#user_name").val());
+		document.getElementById("my_name").value = document.getElementById("user_name").value;
+		
+		//$("#my_name").val() = ""; X 틀린 문법
+		$("#my_name").val("");
+		//jQuery에서 값을 주거나 빼고자 할 때 val() 안에서 수정해야한다
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<p>
+		<input type="text" name="user_name" id="user_name" value="홍길동" />
+	</p>
+	<p>
+		<input type="text" name="my_name" id="my_name" />
+	</p>
+</body>
+</html>

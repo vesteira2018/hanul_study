@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanul.mybatis.boardMapper.xml">
+	<select id="getAllList" resultType="BoardDTO">
+		SELECT * FROM tblBoard ORDER BY b_num DESC
+	</select>
+	
+	<insert id="boardInsert" parameterType="BoardDTO">
+		INSERT INTO tblBoard 
+		VALUES(b_num_seq.NEXTVAL, #{b_subject}, #{b_pwd}, #{b_content}, 
+					 #{b_writer}, SYSDATE, 0)
+	</insert>
+	
+	<select id="boardDetail" parameterType="int" resultType="BoardDTO">
+		SELECT * FROM tblBoard WHERE b_num = #{b_num}
+	</select>
+	
+	<update id="boardCount" parameterType="int">
+		UPDATE tblBoard SET b_readcount = b_readcount + 1 WHERE b_num = #{b_num}
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM tblBoard WHERE b_num = #{b_num}
+	</delete>
+	
+	<update id="boardUpdate" parameterType="BoardDTO">
+		UPDATE tblBoard 
+			SET b_writer = #{b_writer}, b_subject = #{b_subject},
+					b_content = #{b_content}, b_pwd = #{b_pwd}
+		WHERE b_num = #{b_num}
+	</update>
+
+	<select id="boardSearch" parameterType="SearchDTO" resultType="BoardDTO">
+		SELECT * FROM tblBoard WHERE UPPER(${part}) LIKE UPPER(#{searchData})
+		ORDER BY b_num DESC
+	</select>
+
+</mapper>	

@@ -1,0 +1,24 @@
+A 8. private
+
+A 9. @Override(재정의)
+
+A 10. Polymorphism(다형성)
+
+A extend.
+total value : ∞
+
+int j의 for가 끝나기 전까지 int i의 for는 실행되지 않는다.
+i는 계속 1씩 증가하게 되나 j가 1로 고정되어있어 조건을 계속 만족하기 때문에
+total 값은 무한정으로 증가하게 될 것이다.
+
+i = 1, j = 1, j<=i (true)
+total: 1
+i = 2, j = 1, j<=i (true)
+total: 2
+i = 3, j = 1, j<=i (true)
+total: 3
+i = 4, j = 1, j<=i (true)
+total: 4
+....
+i++, j = 1, j<=i (true)
+total: i

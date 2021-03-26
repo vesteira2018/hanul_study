@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="visual.mapper">
+	<select id="department_analysis" resultType="hashmap">
+		SELECT nvl((SELECT department_name FROM departments WHERE department_id = e.department_id), '미배치') department_name, COUNT(*)
+		FROM employees e
+		GROUP BY department_id
+		ORDER BY 1
+	</select>
+</mapper>

@@ -1,0 +1,173 @@
+@charset "UTF-8";
+/* placeholder 색상과 폰트 사이즈 */
+input:-ms-input-placeholder {
+	color: #757575;
+	font-size: 1.2rem;
+}
+input::-webkit-input-placeholder {
+	color: #757575;
+	font-size: 1.2rem;
+}
+input:-moz-placeholder {
+	color: #757575;
+	font-size: 1.2rem;
+}
+input::-moz-placeholder {
+	color: #757575;
+	font-size: 1.2rem;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 'Noto Serif KR', serif;
+	font-weight: bold;
+}
+
+html {
+  background: url(../image/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* 로그인창 전체 */
+#wrap {
+	width: 500px;
+	padding: 15px;
+	border: 2px solid purple;
+	border-radius: 15px 0px;
+	text-align: center;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	box-shadow: 10px 10px 30px violet;
+}
+
+#moveBack {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	cursor: pointer;
+	transition: 0.25s;
+	font-size: 0.85rem;
+}
+
+/* 로그인창 */
+table {
+	width: 470px;
+	text-align: center;
+}
+
+table caption {
+	font-size: 1.5rem;
+	margin: 10px;
+}
+
+table tr td {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+table tr:nth-child(1) td, table tr:nth-child(2) td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#seePw {
+	font-size: 0.95rem;
+}
+
+/* input */
+input[type="text"],
+input[type="password"] {
+	display: inline-block;
+	background: none;
+	
+	width: 350px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	
+	border: 0px;
+	outline: none;
+	border-bottom: 2px solid #3F0099;
+	transition: 0.25s;
+	
+	color: #8041D9;
+	font-size: 1.2rem;
+	background-color: none;
+}
+
+input[type="submit"],
+input[type="reset"] {
+	display: inline-block;
+	width: 170px;
+	height: 40px;
+	line-height: 37px;
+	font-size: 1.2rem;
+	margin: 10px auto;
+	
+	background: none;
+	border: 0px;
+	border: 2px solid #D941C5;
+	border-radius: 10px 0px;
+	outline: none;
+
+	text-align: center;
+	color: black;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+	background-color: #D941C5;
+	color: white;
+}
+
+/* 로그인창 하단 */
+#login_bottom {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+#login_bottom label {
+	padding: 5px 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 10px 0px;
+	transition: 0.25s;
+}
+
+#login_bottom label:hover {
+	background-color: gray;
+	cursor: pointer;
+}
+
+#login_bottom input[type="checkbox"]:checked ~ label {
+	background-color: black;
+	color: white;
+}
+
+#login_bottom a {
+	padding: 5px;
+	color: #DB005B;
+	transition: 0.25s;
+	border-radius: 10px 0px;
+	text-decoration: none;
+}
+
+#login_bottom a:hover {
+	background-color: #FFB4FF;
+}

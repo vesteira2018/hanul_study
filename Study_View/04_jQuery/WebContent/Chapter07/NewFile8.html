@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+		console.log($("#menu li:eq(0)").is(":visible"));	//false
+		console.log($("#menu li:eq(1)").is(":visible"));	//true
+		
+		console.log($("#chk1").is(":checked"));	//true
+		console.log($("#chk2").is(":checked"));	//false
+		
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li style="display: none;">내용0</li>
+		<li>내용1</li>
+	</ul>
+	<p>
+		<input type="checkbox" name="chk1" id="chk1" checked="checked" />
+		<label for="chk1">체크1</label>
+	</p>
+	<p>
+		<input type="checkbox" name="chk2" id="chk2" />
+		<label for="chk2">체크2</label>
+	</p>
+</body>
+</html>

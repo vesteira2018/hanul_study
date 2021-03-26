@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+@import url(color_red.css);
+@import url(background_black.css);
+	
+h1 {
+	color: white;
+}

@@ -1,0 +1,30 @@
+※ 단축키
+- 자동 import : ctrl + shift + O
+- 주석처리 : 블럭설정 후 ctrl + shift + c
+- 복사해서 붙여넣기 : 블럭설정 후 ctrl + alt + 방향키
+- 라인 이동 : alt + 방향키
+- 라인 삭제 : ctrl + d
+
+※ MVC
+- Controller(C) 생성 후
+1. @Controller 지정
+2. 요청에 대한 매핑을 한다.
+	메소드 선언 : @RequestMapping("요청uri")
+	메소드 내부에는 비지니스 로직 처리 후 화면을 연결한다
+	비지니스 로직 : DAO -- > DTO (Model:M)
+	화면에 전달한 데이터가 있다면 Model 객체에 담는다
+	return "화며나일명"; view(V)
+	
+※ 데이터를 전달하면서 화면 연결
+1. Model 객체를 이용
+선언한 메소드에 Model 타입의 파라미터를 선언한 후
+선언한 파라미터 변수에 attribute로 데이터를 담는다 : 파라미터변수.addAttribute("속성명", 데이터);
+
+2. ModelAndView 객체를 이용
+ModelAndView 타입의 변수를 선언한 후
+선언한 변수에 Object로 데이터를 담는다. : 선언한 변수.addObject("객체명", 데이터);
+응답할 화면을 지정한다. : 선언한 변수.setViewName("화면명");
+return 선언한 변수;
+
+※ 화면에 있는 form 내의 데이터를 서버에 전송하는 방법
+1. HttpServletRequest 객체를 이용하는 방법

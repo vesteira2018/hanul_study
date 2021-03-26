@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	input:focus::-webkit-input-placeholder, 
+	textarea:focus::-webkit-input-placeholder { 
+		/* WebKit browsers */ 
+		color:transparent; 
+	} 
+	input:focus:-moz-placeholder, 
+	textarea:focus:-moz-placeholder { 
+		/* Mozilla Firefox 4 to 18 */ 
+		color:transparent; 
+	} 
+	input:focus::-moz-placeholder, 
+	textarea:focus::-moz-placeholder { 
+		/* Mozilla Firefox 19+ */ 
+		color:transparent; 
+	} 
+	input:focus:-ms-input-placeholder, 
+	textarea:focus:-ms-input-placeholder { 
+		/* Internet Explorer 10+ */ 
+		color:transparent; 
+	}
+</style>
+
+<script type="text/javascript">
+	window.onload = function() {
+		
+		var userId = document.getElementById("userId");
+		var userPw = document.getElementById("userPw");
+		var userEmail = document.getElementById("userEmail");
+		
+		//유효성 검사
+		var regUserId = /^[a-z]\w{4, 11}$/;
+		var regUserPw = /^[a-z]\w{4, 11}$/;
+		var regUserEmail = /^[a-z]\w{4, 11}@[a-z]{2, 10}[\.][a-z]{2, 3}[\.]?[a-z]{0, 2}$/;
+		
+		document.myForm.onsubmit = function() {
+			if (!userId.value) {
+				alert("아이디를 입력하세요");
+				userId.focus();
+				return false;
+			}//if
+			
+			if (!regUserId.test(userId.value)) {
+				alert("아이디의 형식이 잘못 작성되었습니다.\n"
+						+ "아이디는 영문자로 시작하고 5글자에서 12글자입니다.");
+				userId.value = "";
+				userId.focus();
+				return false;
+			}//if
+			
+			if (!userPw.value) {
+				alert("비밀번호를 입력하세요");
+				userPw.focus();
+				return false;
+			}//if
+			
+			if (!regUserPw.test(userPw.value)) {
+				alert("비밀번호의 형식이 잘못 작성되었습니다.\n"
+						+ "비밀번호는 영문자로 시작하고 5글자에서 12글자입니다.");
+				userPw.value = "";
+				userPw.focus();
+				return false;
+			}//if
+			
+			if (!userEmail.value) {
+				alert("이메일를 입력하세요");
+				userEmail.focus();
+				return false;
+			}//if		
+			
+			if (!regUserEmail.test(userEmail.value)) {
+				alert("이메일의 형식이 잘못 작성되었습니다.");
+				userPw.value = "";
+				userPw.focus();
+				return false;
+			}//if
+		}//onsubmit
+		
+		document.myForm.onreset = function() {
+			var result = confirm("정말로 회원가입을 취소하시겠습니까?");
+			if (result) {
+				userId.value = "";
+				userPw.value = "";
+				userEmail.value = "";
+				userId.focus();
+				return false;
+			}//if
+		}//onreset
+		
+	}//onload
+
+</script>
+
+</head>
+<body>
+	<form method="get" name="myForm" autocomplete="on">
+		<fieldset>
+			<legend>회원가입</legend>
+			<p>
+				<label for="userId">아&nbsp;&nbsp;이&nbsp;&nbsp;디</label>
+				<input type="text" name="userId" id="userId" placeholder="영문자로 시작하고 5~12자"
+							 size="20" maxlength="12" autofocus="autofocus" />
+			</p>
+			<p>
+				<label for="userPw">비밀&nbsp;번호</label>
+				<input type="password" name="userPw" id="userPw" placeholder="영문자로 시작하고 5~12자"
+							 size="20" maxlength="12" />
+			</p>
+			<p>
+				<label for="userEmail">이&nbsp;&nbsp;메&nbsp;&nbsp;일</label>
+				<input type="text" name="userEmail" id="userEmail" placeholder="이메일을 입력하세요" />
+			</p>
+			<p>
+				<input type="submit" value="회원가입" />
+				<input type="reset" value="가입취소" />
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

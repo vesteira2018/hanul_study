@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var color = ["white","yellow","aqua","violet","red"];
+	var i = 0;
+	function colorBg() {
+		i++
+		if (i >= color.length) {
+			i = 0;
+		}
+		
+		document.getElementsByTagName("body")[0].style.backgroundColor = color[i];
+	}
+	
+	window.onload = function() {
+		document.getElementById("btn2").onclick = function() {
+			colorBg();
+		};
+		
+		document.getElementById("btn4").onmouseover = function() {
+			colorBg();
+		};
+	};
+
+</script>
+</head>
+<body>
+	<p>
+		<button onclick="colorBg();">버튼 1</button>
+	</p>
+	<p>
+		<button id="btn2">버튼 2</button>
+	</p>
+	<p>
+		<button onmouseover="colorBg();">버튼 3</button>
+	</p>
+	<p>
+		<button id="btn4">버튼 4</button>
+	</p>
+</body>
+</html>

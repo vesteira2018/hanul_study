@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test jQuery03</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="jquery/jquery-3.5.1.js"></script>
+<script>
+$(document).ready(function() {
+	$("#btn").click(function() {
+		$.ajax({
+			dataType: "json",
+			url: "gjbus.jsp",
+			success: function(data) { resultHtml(data); },
+			error: function() { alert("JSON DATA LOADING ERROR!"); }
+		});
+	});//click()
+});//ready
+
+function resultHtml(data) {
+	//alert("JSON DATA LOADING SUCCESS!");
+	var html = "<table border='1'>";
+	html += "<tr>";
+	html += "<th>노선번호</th><th>출발지</th><th>도착지</th>";
+	html += "<th>첫차</th><th>막차</th><th>운행간격</th><th>노선종류</th>";
+	html += "</tr>";
+	
+	$.each(data, function(key, value) {
+		if (value.LINE_KIND != 6) {
+			html += "<tr align='center'>";
+			html += "<td>" + value.LINE_NAME + "</td>";
+			html += "<td>" + value.DIR_UP_NAME + "</td>";
+			html += "<td>" + value.DIR_DOWN_NAME + "</td>";
+			html += "<td>" + value.FIRST_RUN_TIME + "</td>";
+			html += "<td>" + value.LAST_RUN_TIME + "</td>";
+			html += "<td>" + value.RUN_INTERVAL + "</td>";
+			switch (value.LINE_KIND) {
+			case 1: html += "<td>급행간선</td>";
+							break;
+			case 2: html += "<td>간선</td>";
+							break;
+			case 3: html += "<td>지선</td>";
+							break;
+			case 4: html += "<td>마을버스</td>";
+							break;
+			default: html += "<td></td>";
+							break;
+			} 
+			html += "</tr>";
+		}
+	});
+	
+	html += "</table>";
+	
+	$("#display").empty();
+	$("#display").append(html);
+}
+</script>
+</head>
+<body>
+<button id="btn">광주광역시 버스 노선정보</button>
+<br /><br />
+<div id="display">
+여기에 버스 노선 정보가 출력됩니다.
+</div>
+</body>
+</html>

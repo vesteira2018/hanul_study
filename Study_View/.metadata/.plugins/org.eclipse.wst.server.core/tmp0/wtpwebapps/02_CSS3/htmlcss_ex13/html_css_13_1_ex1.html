@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+<!-- float:left 와 float:right 차이점 -->
+<style>
+#row1 {
+	width: 500px;
+	margin: 0 auto;
+	border: 5px solid red;
+	overflow: hidden;
+}
+
+#row1 .first {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 5px;
+	padding: 5px;  
+	border: 1px solid red;
+}
+
+#row1 .second {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid red;
+}
+
+#row2 {
+	width: 500px;
+	margin: 0 auto;
+	border: 5px solid red;
+	overflow: hidden;
+}
+
+#row2 .first {
+	width: 100px;
+	height: 100px;
+	float: right;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid red;
+}
+
+#row2 .second {
+	width: 100px;
+	height: 100px;
+	float: right;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid red;
+}
+</style>
+
+</head>
+
+<body>
+	<div id="row1">
+		<div class="first">row1_first</div>
+		<div class="second">row1_second</div>
+	</div>
+<br />
+	<div id="row2">
+		<div class="first">row2_first</div>
+		<div class="second">row2_second</div>
+	</div>
+</body>
+</html>

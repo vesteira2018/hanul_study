@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+#contain {
+	width: 800px;
+	margin: 0px auto;
+	border: 1px solid red;
+}
+
+#header, #footer {
+	height: 50px;
+	background-color: gray;
+}
+
+#content {
+	height: 200px;
+	position: relative;	/* 하위태그 absolute를 위해 relative 설정 */
+}
+
+#content div {
+	width: 100px;
+	height: 100px;
+	border: 2px dashed green;
+}
+
+#content1 {
+	background-color: aqua;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 4;
+}
+#content2 {
+	background-color: yellow;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	z-index: 3;
+}
+#content3 {
+	background-color: blue;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	z-index: 2;
+}
+#content4 {
+	background-color: purple;
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	z-index: 1;
+}
+
+#content>div:hover {
+	z-index: 100;
+}
+
+</style>
+</head>
+<body>
+	<div id="contain">
+		<div id="header">HEADER</div>
+		<div id="content">
+			<div id="content1">content1</div>
+			<div id="content2">content2</div>
+			<div id="content3">content3</div>
+			<div id="content4">content4</div>
+		</div>
+		<div id="footer">FOOTER</div>
+	</div>
+</body>
+</html>

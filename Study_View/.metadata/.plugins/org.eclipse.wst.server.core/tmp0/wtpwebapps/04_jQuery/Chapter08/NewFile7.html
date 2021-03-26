@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+		$("#pw").keyup(function() {
+			$("#pwCheckSpan").html("");
+		});	//pw keyup
+		
+		$("#pwCheck").keyup(function() {
+			if ($("#pw").val() == $("#pwCheck").val()) {
+					$("#pwCheckSpan").html("일치합니다").css("color","green");
+			} else {
+					$("#pwCheckSpan").html("일치하지 않습니다").css("color","red");
+			}//if
+		});	//pwCheck keyup
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><label for="pw">비밀번호</label></td>
+			<td><input type="password" name="pw" id="pw" /></td>
+		</tr>
+		<tr>
+			<td>비밀번호확인</td>
+			<td>
+				<input type="password" name="pwCheck" id="pwCheck" />
+				<span id="pwCheckSpan"></span>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#start_ajax").click(function() {
+			
+			$.ajax({
+				url: "data/data.html",	//서버에 요청할 url
+				type: "get",	//서버로의 데이터 전송 타입
+				dataType: "html",	//서버에서 내려온 데이터 타입
+													//xml, json, html, script
+				success: function(result) {
+					$("body").append(result);
+				}//success
+			});	//ajax
+			
+		}); //start_ajax
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<button id="start_ajax">통신시작</button>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	form {
+		width: 500px;
+		border: 3px dashed blue;
+		margin: 10px auto; /* 위에서부터 시계방향으로 돈다 */
+						/* n px auto를 하면 width를 설정한대로 가운데정렬한다. */
+	}
+	
+	input {
+		color: green;
+		font-size: 30px;
+		font-weight: bold;
+		padding-left: 10px; /* padding-left = text-indent */
+	}
+	
+	input[type="text"] {
+		color: orange;
+		font-size: 50px;
+		width: 200px;
+	}
+	
+	input[type="password"] {
+		color: red;
+		border: 5px solid red;
+	}
+	
+	img[src] {
+		border: 5px solid green;
+		width: 300px;
+		margin: 0px auto; /* 정렬을 하려면 block tag이어야 한다. */
+		display: block; /* inline tag를 block tag처럼 바꿔준다. */
+	}
+	
+</style>
+</head>
+<body>
+<form name="form" id="form">
+	<table>
+		<tr>
+			<td><label for="name">이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름</label></td>
+			<td><input type="text" name="name" id="name" /></td>
+		</tr>
+		<tr>
+			<td><label for="id">아&nbsp;&nbsp;이&nbsp;&nbsp;디</label></td>
+			<td><input type="text" name="id" id="id" /></td>
+		</tr>
+		<tr>
+			<td><label for="pw">비밀&nbsp;번호</label></td>
+			<td><input type="password" name="pw" id="pw" /></td>
+		</tr>
+		<tr>
+			<td><label for="tel">전화&nbsp;번호</label></td>
+			<td><input type="text" name="tel" id="tel" /></td>
+		</tr>
+	</table>
+</form>
+<img src="navi.png" /><br />
+</body>
+</html>

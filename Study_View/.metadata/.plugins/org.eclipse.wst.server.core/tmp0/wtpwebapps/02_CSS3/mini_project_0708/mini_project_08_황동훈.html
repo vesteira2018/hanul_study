@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>홈페이지 레이아웃</title>
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Times New Roman', serif;  
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+}
+
+img {
+	border: 0px;
+}
+
+#main_header, #content, #main_footer {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+/* main_header */
+#main_header {
+	height: 160px;
+	position: relative;
+}
+
+/* main_header main_gnb */
+#main_gnb ul {
+	overflow: hidden;
+	display: table;
+	position: absolute;
+	top: 10px;
+	right: 0px;
+}
+
+#main_gnb ul li {
+	float: left;
+}
+
+#main_gnb ul li a {
+	padding: 5px 15px;
+	border: 1px solid black;
+}
+
+#main_gnb ul li:nth-child(2n) a {
+	margin-left: -1px;
+	margin-right: -1px;
+}
+
+#main_gnb ul li:first-child a {
+	border-radius: 20px 0px 0px 20px;
+}
+
+#main_gnb ul li:last-child a {
+	border-radius: 0px 20px 20px 0px;
+}
+
+#main_gnb ul li a:hover {
+	background-color: black;
+	color: white;
+}
+
+/* main_header title */
+#title {
+	font-family: 'Henny Penny', cursive;
+	position: absolute;
+	top: 30px;
+	left: 20px;
+}
+
+/* main_header main_lnb */
+#main_lnb ul {
+	overflow: hidden;
+	display: table;
+	position: absolute;
+	top: 110px;
+	right: 0px;
+}
+
+#main_lnb ul li {
+	float: left;
+}
+
+#main_lnb ul li a {
+	padding: 10px 20px;
+	border: 1px solid black;
+}
+
+#main_lnb ul li:nth-child(2n) a {
+	margin-left: -1px;
+	margin-right: -1px;
+}
+
+#main_lnb ul li:first-child a {
+	border-radius: 20px 0px 0px 20px;
+}
+
+#main_lnb ul li:last-child a {
+	border-radius: 0px 20px 20px 0px;
+}
+
+#main_lnb ul li a:hover {
+	background-color: black;
+	color: white;
+}
+
+/* content */
+#content {
+	overflow: hidden;
+}
+
+/* content main_section */
+#content>#main_section {
+	width: 790px;
+	float: left;
+}
+
+#main_section>article {
+	border: 1px solid black;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+/* content main_aside */
+#content>#main_aside {
+	width: 200px;
+	float: right;
+}
+
+#main_aside input[type="radio"] {
+	display: none;
+}
+
+#main_aside .buttons {
+	overflow: hidden;
+	display: table;
+	margin: 0px auto;
+}
+
+#main_aside input[type="radio"] ~ section>label {
+	display: block;
+	border: 1px solid black;
+	width: 100.5px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+	color: black;
+}
+
+#main_aside .buttons label:last-child {
+	margin-left: -1px;
+}
+
+#main_aside #first:checked ~ section>label:first-child {
+	background-color: black;
+	color: white;
+}
+
+#main_aside #second:checked ~ section>label:last-child {
+	background-color: black;
+	color: white;
+}
+
+.tab_item_1, .tab_item_2 {
+	display: none;
+}
+
+#main_aside #first:checked ~ .tab_item_1 {
+	display: block;
+}
+
+#main_aside #second:checked ~ .tab_item_2 {
+	display: block;
+}
+
+.item {
+	overflow: hidden;
+	border: 1px solid black;
+	padding: 10px;
+	margin-top: -1px;
+}
+
+.thumbnail {
+	float: left;
+}
+
+.description {
+	float: left;
+	margin-left: 10px;
+	display: block;
+	width: 120px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+}
+
+/* footer */
+#main_footer {
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+	<header id="main_header">
+		<nav id="main_gnb">
+			<ul>
+				<li><a href="#">Web</a></li>
+				<li><a href="#">Mobile</a></li>
+				<li><a href="#">Game</a></li>
+				<li><a href="#">Simulation</a></li>
+				<li><a href="#">Data</a></li>
+			</ul>
+		</nav>
+		<div id="title"><!-- #title 에 Henny Penny 글꼴 적용 -->
+			<h1>Rint Development</h1>
+			<h2>HTML5 + CSS3 Basic</h2>
+		</div>
+		<nav id="main_lnb">
+			<ul>
+				<li><a href="#">HTML5</a></li>
+				<li><a href="#">CSS3</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">jQuery</a></li>
+				<li><a href="#">Node.js</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="content">
+		<section id="main_section">
+			<article class="main_article">
+				<h1>Main Article</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna
+					id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus
+					magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor
+					ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt
+					dictum urna ut ultricies. Nullam diam nibh, pellentesque non
+					laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor
+					laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas
+					justo libero, euismod sit amet suscipit eu, vulputate eget neque.
+					Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin
+					et odio aliquam erat pharetra accumsan et quis neque. Vivamus
+					interdum accumsan leo eu adipiscing. Integer accumsan elit non
+					turpis faucibus porttitor. Aliquam scelerisque nisi et turpis
+					pretium at ultricies turpis pharetra.
+				</p>
+			</article>
+			<article class="main_article">
+				<h1>Main Article</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna
+					id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus
+					magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor
+					ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt
+					dictum urna ut ultricies. Nullam diam nibh, pellentesque non
+					laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor
+					laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas
+					justo libero, euismod sit amet suscipit eu, vulputate eget neque.
+					Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin
+					et odio aliquam erat pharetra accumsan et quis neque. Vivamus
+					interdum accumsan leo eu adipiscing. Integer accumsan elit non
+					turpis faucibus porttitor. Aliquam scelerisque nisi et turpis
+					pretium at ultricies turpis pharetra.
+				</p>
+			</article>
+			<article class="main_article">
+				<h1>Main Article</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna
+					id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus
+					magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor
+					ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt
+					dictum urna ut ultricies. Nullam diam nibh, pellentesque non
+					laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor
+					laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas
+					justo libero, euismod sit amet suscipit eu, vulputate eget neque.
+					Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin
+					et odio aliquam erat pharetra accumsan et quis neque. Vivamus
+					interdum accumsan leo eu adipiscing. Integer accumsan elit non
+					turpis faucibus porttitor. Aliquam scelerisque nisi et turpis
+					pretium at ultricies turpis pharetra.
+				</p>
+			</article>
+		</section>
+		<aside id="main_aside">
+			<input id="first" type="radio" name="tab" checked="checked" /> 
+			<input id="second" type="radio" name="tab" />
+			<section class="buttons">
+				<label for="first">First</label> 
+				<label for="second">Second</label>
+			</section>
+			<div class="tab_item_1">
+				<ul>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>HTML5 Canvas</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>HTML5 Audio</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>HTML5 Video</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>HTML5 Semantic Web</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab_item_2">
+				<ul>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>CSS3 Transition</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>CSS3 Animation</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>CSS3 Border</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							<div class="thumbnail">
+								<img src="http://placehold.it/45x45" />
+							</div>
+							<div class="description">
+								<b>CSS3 Box</b>
+								<p>2019-03-15</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+	</div>
+	<footer id="main_footer">
+		<h3>HTML5 + CSS3 Basic</h3>
+		<address>Website Layout Basic</address>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+// 		$("input[type='text']").css(
+// 			"border","1px dashed red"
+// 		);
+// 		$("input:text").css(
+// 			"border","1px dashed red"
+// 		);
+// 		$(":text").css(
+// 			"border","1px dashed red"
+// 		);
+		$("#user_name").css(
+			"border","1px dashed red"
+		);
+		
+// 		$("input[type='checkbox']:checked").prop(
+// 			"checked",false
+// 		);
+// 		$("input:checked").prop(
+// 			"checked",false
+// 		);
+// 		$(":checked").prop(
+// 			"checked",false
+// 		);
+		$("#accept:checked").prop(
+			"checked",false
+		);
+		
+// 		$("option:selected").prop(
+// 			"selected",false
+// 		);
+// 		$(":selected").prop(
+// 			"selected",false
+// 		);
+		$("#rel_site").val("네이버").prop(
+			"selected",true
+		);
+		
+		
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<p>
+		<label for="user_name">이름</label>
+		<input type="text" name="user_name" id="user_name" />
+	</p>
+	<p>
+		<input type="checkbox" name="accept" id="accept" checked="checked" />
+		<label for="accept">사용자 동의</label>
+	</p>
+	<p>
+		<select name="rel_site" id="rel_site">
+			<option value="구글">구글</option>
+			<option value="네이버">네이버</option>
+			<option value="네이트" selected="selected">네이트</option>
+		</select>
+	</p>
+</body>
+</html>

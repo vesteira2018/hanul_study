@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SIGN UP</title>
+<style type="text/css">
+	@import url("css/signup.css");
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="js/signup.js"></script>
+
+</head>
+<body>
+	<form method="get" action="#" name="signup_form" id="signup_form">
+		<table>
+			<tr align="center">
+				<td colspan="2">S&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;&nbsp;&nbsp;P</td>
+			</tr>
+		
+			<tr>
+				<td>
+					<input type="text" name="name" id="name" 
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="N   A   M   E" maxlength="5" style="IME-MODE: active" />
+					<span class="alertSpan" id="nameSpan"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input type="text" name="id" id="id" 
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="I          D" maxlength="12" style="IME-MODE: disabled" />
+					<button type="button" name="idConfirm" id="idConfirm">C&nbsp;H&nbsp;E&nbsp;C&nbsp;K</button>
+					<span class="alertSpan" id="idSpan"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input type="password" name="pw" id="pw" 
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="P  A  S  S  W  O  R  D" maxlength="16" style="IME-MODE: disabled" />
+					<span class="alertSpan" id="pwSpan"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input type="password" name="pwConfirm" id="pwConfirm" 
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="C O N F I R M   P A S S W O R D" maxlength="16" style="IME-MODE: disabled" />
+					<input type="checkbox" name="pwShow" id="pwShow" />
+					<label for="pwShow">SHOW PASSWORD</label>
+					<span class="alertSpan" id="pwConfirmSpan"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input type="text" name="email" id="email" 
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="E   -   M   A   I   L" style="IME-MODE: disabled" />
+					<span class="alertSpan" id="emailSpan"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input type="text" class="tel" name="tel1" id="tel1" size="3" maxlength="3"
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="0   1   0"/>
+				&nbsp;&nbsp;-&nbsp;&nbsp;
+					<input type="text" class="tel" name="tel2" id="tel2" size="4" maxlength="4"
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="0   0   0   0" />
+				&nbsp;&nbsp;-&nbsp;&nbsp;
+					<input type="text" class="tel" name="tel3" id="tel3" size="4" maxlength="4"
+								 onkeypress="if(event.keyCode==13){return false};" 
+								 placeholder="0   0   0   0" />
+					<span class="alertSpan" id="telSpan"></span>
+				</td>
+			</tr>
+			
+			<tr align="center">
+				<td colspan="2">
+					<input type="submit" value="S  I  G  N    U  P" />
+					<input type="reset" value="C  A  N  C  E  L" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

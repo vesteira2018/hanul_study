@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			$("h1").fadeTo("slow", 0.3);
+		});	//button1
+		
+		$("#btn2").on("click", function() {
+			$("h1").fadeTo(700, 0.6);
+		});	//button2
+		
+		$("#btn3").on({
+			"click" : function() {
+				$("h1").fadeTo(700, 1.0);
+			}
+		});	//button3
+		
+	}); //ready
+</script>
+</head>
+<body>
+	<button id="btn1">투명도(30%)</button>
+	<button id="btn2">투명도(60%)</button>
+	<button id="btn3">투명도(100%)</button>
+	<h1>CONTENT</h1>
+</body>
+</html>

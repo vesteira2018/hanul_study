@@ -1,0 +1,23 @@
+1. 변수 (Variable)
+	- 데이터(값)를 저장할 때 사용되는 메모리 기억공간
+	- 데이터를 담는 상자 → 크기 ▶ Data Type(자료형)
+	- 기억공간에는 이름이 있어야 한다 ▶ Identifier(식별자)
+	
+2. Data Type(자료형) : 변수의 크기와 저장되는 데이터의 종류를 결정
+	① 기본자료형(Primitive Data Type)
+		- 정수형 : byte(1), short(2), "int(4)", long(8)
+		- 실수형 : float(4), "double(8)"
+		- 문자형(단일문자) : char(2)
+		- 부울형(논리형) : "boolean(1)" → true or false
+	② 사용자 정의 자료형 : 참조형 자료(Reference Type) → 무조건 4byte
+		- class type : String
+		- interface type
+		- array type
+		
+3. 변수명(식별자) 작성 규칙
+	- 반드시 영문자 소문자 시작(영문자, 한글 , '_', '&' 사용 가능)
+	- 예약어(Key Word)는 사용 불가
+	- 띄어쓰기는 사용할 수 없다
+	- 글자수에 제한이 없으므로 가급적이면 의미가 나타나도록 작성
+	
+★ 선언, 할당, 초기화, 나열, 재할당

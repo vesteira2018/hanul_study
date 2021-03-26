@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LOGIN</title>
+
+<style type="text/css">
+	@import url("css/login.css");
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="js/login.js"></script>
+
+</head>
+<body>
+	<div id="wrap">
+		<span id="moveBack">◀</span>
+		<form action="#" method="get" name="login_form" id="login_form">
+			<table>
+				<caption>L&nbsp;&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;N</caption>
+				
+				<tr>
+					<td colspan="2">
+						<input type="text" placeholder="I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D" name="userId" id="userId" 
+									 maxlength="12" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2">
+						<input type="password" placeholder="P&nbsp;&nbsp;A&nbsp;&nbsp;S&nbsp;&nbsp;S&nbsp;&nbsp;W&nbsp;&nbsp;O&nbsp;&nbsp;R&nbsp;&nbsp;D" name="userPw"
+									 id="userPw" maxlength="16" />
+						<span id="seePw"></span>
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="Login" />
+						<input type="reset" value="Cancel" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+		<div id="login_bottom">
+			<input type="checkbox" name="staySignin" id="staySignin" checked="checked"/>
+			<label for="staySignin">Stay signed in</label>
+			&nbsp;&nbsp;Need a account? <a href="signup.html">Sign Up!</a>
+		</div>
+
+	</div>
+</body>
+</html>

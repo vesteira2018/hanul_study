@@ -1,0 +1,39 @@
+CREATE TABLE Answer (
+	quest NUMBER PRIMARY KEY NOT NULL,
+	ans		NUMBER NOT NULL
+);
+
+INSERT INTO Answer
+	VALUES (1, 2);
+	
+INSERT INTO Answer
+	VALUES (2, 1);
+	
+INSERT INTO Answer
+	VALUES (3, 4);
+
+INSERT INTO Answer
+	VALUES (4, 3);
+	
+INSERT INTO Answer
+	VALUES (5, 3);
+	
+INSERT INTO Answer
+	VALUES (6, 2);
+	
+INSERT INTO Answer
+	VALUES (7, 4);
+	
+INSERT INTO Answer
+	VALUES (8, 3);
+	
+INSERT INTO Answer
+	VALUES (9, 1);
+	
+INSERT INTO Answer
+	VALUES (10, 2);
+  
+COMMIT;
+  
+SELECT *
+FROM 	 Answer;

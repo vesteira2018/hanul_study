@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/* #lower p:nth-child(2) - 2번째 형제가 p일때에만 적용 */
+	#lower p:first-of-type {
+		color: red;
+}
+	/* .parent h1 */
+	/* .parent h1:first-child */ 
+	/* .parent h1:first-of-type */
+	.parent h1:nth-child(1) {
+		color: blue;
+}
+/* 	.parent div:nth-child(2) */
+	.parent div:first-of-type {
+		color: purple;
+}
+/* 	.parent p  */
+/* 	.parent p:first-of-type { */
+	.parent p:nth-child(3) {
+		color: red;
+}
+</style>
+</head>
+<body>
+	<div id="lower">
+		<div>text1</div>
+		<p>text2</p>
+		<p>text3</p>
+	</div>
+	
+	<div class="parent">
+		<h1>h1-Child1</h1>
+		<div>div-Child2</div>
+		<p>p-Child3</p>
+		<div>div-Child4</div>
+	</div>
+</body>
+</html>

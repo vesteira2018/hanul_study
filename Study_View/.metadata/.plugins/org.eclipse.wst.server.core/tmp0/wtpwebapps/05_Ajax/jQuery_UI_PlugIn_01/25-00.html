@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Plugin Draggable</title>
+
+<!-- 
+※ 플러그인 연동 위치
+제이쿼리 라이브러리 파일 연동  
+플러그인 파일 연동(반드시 제이쿼리 파일 보다 아래에 위치해야 함.) 
+-->
+<link rel="stylesheet" href="ui-lightness/jquery-ui.css" />
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	width: 300px;
+	height: 350px;
+	background-color: yellow;
+}
+
+h1:hover {
+	cursor: move;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="ui-lightness/jquery-ui.js"></script>
+<script>
+	//$(function(){
+	$(document).ready(function() {
+		$("h1").draggable(); //<h1> 태그에 드래그 기능을 적용합니다.
+	});
+</script>
+</head>
+<body>
+	<h1>팝업 창</h1>
+</body>
+</html>

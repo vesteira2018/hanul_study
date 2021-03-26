@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;SelfStudy.MethodArraySum&apos; to &apos;MethodArray&apos;&#x0D;&#x0A;- Original project: &apos;00.SelfStudy&apos;&#x0D;&#x0A;- Original element: &apos;SelfStudy.MethodArraySum&apos;&#x0D;&#x0A;- Renamed element: &apos;SelfStudy.MethodArray&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MethodArraySum&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;SelfStudy{MethodArraySum.java[MethodArraySum" matchStrategy="1" name="MethodArray" qualified="false" references="true" similarDeclarations="false" stamp="1602816307439" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery05</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	//alert($("p").text());		//tag 선택자
+	$("p").each(function() {	//tag 선택자.each()
+		//alert($("p").text());
+		//alert($(this).text());
+		
+// 		alert($("div").text());
+	});//each()
+	
+// 	$("div").each(function() {
+// 			alert($(this).text());
+// 	});
+	
+// 	alert($("div:eq(0)").text());	//tag 선택자:필터 선택자
+// 	alert($("div:first").text());
+// 	alert($("div:last").text());
+
+	alert($("#a").text());	//id 선택자
+	alert($("div#a").text());	//tag 선택자#id선택자
+	alert($(".b").text());	//class 선택자
+});//ready
+</script>
+</head>
+<body>
+<p>JAVA</p>
+<p>JSP</p>
+<p>Android</p>
+
+<div id="a">AAA</div>
+<div class="b">BBB</div>
+<div>CCC</div>
+</body>
+</html>

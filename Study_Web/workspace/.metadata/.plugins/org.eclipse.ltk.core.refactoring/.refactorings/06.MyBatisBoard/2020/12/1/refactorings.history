@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;06.MyBatisBoard&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ojdbc6.jar&#x0D;&#x0A;     standard.jar&#x0D;&#x0A;     jstl.jar&#x0D;&#x0A;     mybatis-3.5.6.jar" description="Copy files" element1="WebContent/WEB-INF/lib/ojdbc6.jar" element2="WebContent/WEB-INF/lib/standard.jar" element3="WebContent/WEB-INF/lib/jstl.jar" element4="WebContent/WEB-INF/lib/mybatis-3.5.6.jar" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1609228367440" target="/09.Member_Board/WebContent/WEB-INF/lib" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var popup1 = window.open("winpopup.html","popup1",
+			"width=300, height=400, left=300, top=10");
+	var popup2 = window.open("winpopup.html","popup2",
+			"width=300, height=400, left=600, top=10");
+	
+	var popupX = screen.width/2 - 300/2;
+	var popupY = screen.height/2 - 400/2;
+
+</script>
+</head>
+<body>
+	<p>
+		<button	onclick="popup1.moveTo(200,300); popup1.focus(); popup2.focus();"
+		>popup1 브라우저 창 위치(200,300) 변경</button>
+	</p>
+	
+	<p>
+		<button onclick="popup1.resizeTo(200,300); popup1.focus(); popup2.focus();"
+		>popup1 브라우저 창 크기(200,300) 변경</button>
+	</p>
+
+	<p>
+		<button onclick="popup1.moveTo(300,100); popup1.resizeTo(300,400); popup1.focus(); popup2.focus();"
+		>popup1 브라우저 창 위치(300,100), 창 크기(300,400) 원복</button>
+	</p>
+	
+	<p>
+		<button onclick="popup1.moveTo(popupX, popupY); popup1.focus(); popup2.focus();"
+		>popup1 가운데로 창 띄우기</button>
+	</p>
+</body>
+</html>

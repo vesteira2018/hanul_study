@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Study_Arduino\_39_MyTalk_esp8266Wifi\SpringWorkspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1902230314.index
+575734174.index
+1463017561.index
+318746353.index
+3810253394.index
+1034850160.index
+3068942022.index

@@ -1,0 +1,55 @@
+[발표]
+
+[파트 배분]
+- YJ : 메인 페이지(OMR_Main.html) 코딩
+- JH : SQL을 이용해 답안지 생성(Answer.sql) 및 결과 페이지(Result.jsp) 코딩
+- DH : 중간 jsp파일, DAO(Omr.jsp, AnswerDAO.java) 코딩, 파일 취합 및 디버깅/간단한 디자인
+
+[구현되는 순서]
+TestMain.html
+> OMR_Main.html / poketmonMain.html
+> Omr.jsp / poketmon1.jsp
+>> AnswerDAO.java (dao.answerList()) / PoketmonDAO.java (dao.getAnswer())
+>>> Answer.sql (Connection) / 포켓몬 답안지.sql (Connection)
+> Result.jsp / poketmon2.jsp
+
+[OMR_Main.html]
+- html코드로 코딩
+- label을 이용해 radio 박스와 연결
+- radio박스는 CSS를 이용해 보이지 않게 설정
+- label을 꾸며 OMR 마킹하는 것처럼 구현
+
+[Omr.jsp]
+- 내가 입력한 답을 ArrayList<> myAnswer에 저장
+- 이 때 OMR_Main에서 내가 풀지 않은 문제가 있다면 0으로 저장
+- 서버에서 정답을 가져와서 ArrayList<> corrAnswer에 저장
+- 내가 입력한 답과 정답을 비교해 정답/오답을 확인하고 맞춘 문제 수를 저장
+- 문항별로 부분 배점을 적용해 score에 저장
+- Result.jsp로 보내기
+
+[AnswerDAO.java]
+- 서버와 연결
+- 서버에 저장되어 있는 Answer 테이블(Answer.sql)의 정답(ans)를 불러온다
+
+[Result.jsp]
+- 순수 JAVA와 EL, JSTL을 이용해 코딩
+- 섞어서 사용하게 된 이유? : 풀지 않은 문제를 myAnswer에 0으로 저장했는데 결과페이지로 보여질 때 조건문을 이용해 공백처리 & 나의 점수를 합격 커트라인과 비교해 결과문을 출력하기 위해 조건문을 걸었다 / EL을 반복적으로 사용하기 위해 JSTL을 같이 사용
+- OMR_Main에서 내가 풀지 않은 문제를 Omr.jsp에서 0으로 저장했는데
+- myAnswer.get(i)가 0인 경우 공백으로 출력해서 풀지 않은 문제를 한 눈에 확인할 수 있도록 구현
+- 합격 커트라인은 60점
+
+[기타]
+- CSS를 이용해 간단한 디자인을 첨가
+
+[다음에 구현하게 되면 추가하고 싶은 점]
+- 한 번 시험을 보면 재응시가 불가능하게끔 처리
+- 응시자의 시험 데이터를 서버에 저장
+- 응시자별로 응시해야하는 과목을 정해준 다음 다른 과목을 선택한 경우 자신이 응시한 과목을 선택하라는 알림창 띄우기
+
+
+[어려웠던 점]
+- 큰 그림(메인페이지 - 내가 입력한 답과 서버의 정답과 비교하는 페이지 - 서버와 연결하고 답안지를 가져오는 DAO - 결과페이지)을 그리는데에는 문제가 없었으나 코드로 구현하기 어려웠다.
+- 배운 내용이 정리가 되어있지 않아서 이 상황에서 어떻게 코드를 작성해야할 지 난감했다. 그래서 다른 조가 구현한 것을 많이 참고했다.
+- 아직 JSP, Servlet, JSTL에 대한 이해가 부족하다고 판단해 복습이 필요하다고 느낌.
+- 문항수가 많아지면 문항당 배점을 주려면 코드가 길어진다.
+- 뒤로가기 버튼을 눌렀을 때 값이 남아있다. 뒤로가기 버튼을 눌렀을 때 내가 입력한 값이 저장되어있지 않게.

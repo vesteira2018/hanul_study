@@ -1,0 +1,6 @@
+public class Circle {
+	public double getArea(int radius) {
+		double area = (radius * radius * 3.14);
+		return area;
+	}
+}

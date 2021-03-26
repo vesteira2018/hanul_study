@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	text-align: center;
+}
+</style>
+
+<script type="text/javascript">
+	var visitstr;
+	function textSee() {
+		visitstr = document.formtext.textstr.value;
+		document.getElementById("txt").innerHTML += "글 : " + visitstr + "<br />";
+	}
+
+</script>
+</head>
+<body>
+	<div id="header">
+		<p>방명록을 남겨주세요</p>
+		<h1>글쓰기</h1>
+	</div>
+	<form name="formtext" id="formtext">
+		<textarea rows="15" cols="50" placeholder="여기에 글을 써주세요." name="textstr"></textarea>
+		<br />
+		<input type="button" value="확인" onclick="textSee();" />
+		<input type="reset" value="취소" />
+	</form>
+	
+	<div id="txt"></div>
+</body>
+</html>

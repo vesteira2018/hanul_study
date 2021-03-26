@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login_main.html</title>
+<style type="text/css">
+	a {
+		display: block;
+		width: 100px;
+		height: 50px;
+		line-height: 50px;
+		margin-top: 30px;
+		border: 1px solid black;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	button {
+		width: 150px;
+		height: 30px;
+	}
+	
+	#login_button:hover {
+		background-color: #B4FFFF;
+	}
+	
+	#signup_button:hover {
+		background-color: #FFFF6C;
+	}
+
+</style>
+
+<script type="text/javascript">
+	function login_window() {
+		window.open("login_window.html","login","width=400, height=200");
+	}
+
+</script>
+</head>
+<body>
+	<button type="button" id="login_button" onclick="location.href='login.html'">로그인</button>
+	<button type="button" id="signup_button" onclick="location.href='signup.html'">회원가입</button>
+	
+	<div>
+		<a href="login.html">로그인 1</a>
+	</div>
+	
+	<div>
+		<a href="#" onclick="login_window();">로그인 2</a>
+	</div>
+	
+	<div>
+		<a href="#" onclick="window.open('login_window.html','login','width=400, height=200');">로그인 3</a>
+	</div>
+	
+	
+	
+</body>
+</html>

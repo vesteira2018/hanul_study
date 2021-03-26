@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function func() {
+		location.replace("http://www.naver.com")
+	}	
+</script>
+</head>
+<body>
+	<form action="#" method="get" name="form" id="form">
+		<label for="name">이름</label>
+		<input type="text" name="name" id="name" 
+					 required="required" /><br />
+	<p>
+		<input type="button" value="google" 
+					 onclick="location.href='http://www.google.com';" />
+		<input type="button" value="NAVER" 
+					 onclick="func();"/>
+		
+	<br /><br />
+	
+		<button type="button"
+						onclick="location.replace('http://www.daum.net');">
+			Daum</button>
+		<a href="http://jquery.com"><button type="button">jQuery</button></a>
+	
+		<input type="submit" id="submit" name="submit" value="전송" />
+		
+	</p>
+	</form>
+</body>
+</html>
