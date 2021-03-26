@@ -1,0 +1,52 @@
+장비가 다르면 Direct cable로, 같으면 Cross cable로 연결한다.
+
+네트워크 접속 여부 체크 : ping 192.168.0.24(도메인주소)
+
+DHCP : 유동 IP
+Static : 고정 IP
+
+192.168.0.24
+~191 : B CLASS - Subnet Mask 255.255.0.0
+192~223 : C CLASS - 255.255.255.0, 컴퓨터를 256대까지 연결
+224~ : D CLASS
+
+실제 사용할 수 있는 C CLASS ip : 254개
+- 0 : 망번호
+- 255 : 방송용
+
+Gateway(라우터) : 외부와 내부의 통신 연결
+
+Switch> : 사용자 모드
+Switch> enable : 관리자모드 진입
+Switch# : 관리자모드 (네트워크모드 불가)
+Switch#configure terminal : 환경설정모드 진입
+Switch(config)# : 전역(환경)설정 모드
+
+ctrl + shift + 6 : escape
+
+Switch(config)#hostname SW1 : 스위치 이름을 SW1로 설정
+SW1(config)#no ip domain-lookup : ip domain을 물어보지 않는다
+SW1(config)#enable password : 관리자모드 비밀번호 설정(show run에서 보인다)
+SW1(config)#no enable password : 관리자모드 비밀번호 설정 해제
+SW1(config)#enable secret : 관리자모드 비밀번호 설정(show run에서 보이지 않는다)
+SW1(config)#line console 0 : console로 접속
+SW1(config-line)# : 
+
+패리티비트 : 짝수 10101 (1)
+패리티비트 : 홀수 10101 (0)
+패리티비트는 검사만 진행한다
+
+SW1(config)#banner motd #banner# : 배너 추가
+
+SW1(config)#interface vlan 1 : 1(24 port 2 gigaport)에 ip 설정
+
+configuration dialog : 대화형식 (no)
+
+RT1(config-line)#login local : 아이디와 패스워드를 사용
+R1(config-line)#exec-timeout min sec : 접근 시간 부여
+R1(config)#ip host com1 192.168.10.1 : com1에 192.168.10.1 ip를 할당
+
+R1(config)#service password-encryption : 시스템의 패스워드를 모두 암호화
+
+routing table
+1. R1(config)#ip route destination_network sub_mask next_hop_router_address
