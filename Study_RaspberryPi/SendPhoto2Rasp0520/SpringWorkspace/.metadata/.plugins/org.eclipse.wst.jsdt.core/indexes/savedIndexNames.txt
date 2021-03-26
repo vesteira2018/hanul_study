@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\Study_RaspberryPi\SendPhoto2Rasp0520\SpringWorkspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3334122764.index
+3668613864.index
+2554974686.index
+3068942022.index
+3810253394.index
+3943399255.index

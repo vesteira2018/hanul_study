@@ -1,0 +1,172 @@
+- google cloud sdk 를 설치한 후 
+- \> gcloud auth login 을 엔터하면 브라우저창이 뜨며 권한을 승인하라고 한다
+- 그 후 IAM 및 관리자에 서비스계정으로 이동하여  이름과  설명을 알맞게 넣은 후
+  서비스계정을 만든다
+- 메뉴에 다시 와서 API 및 서비스에 사용자인증정보를 만든다 -> json 파일로
+  받은 json파일은 반드시 보관하며 잃어 버리면 다시 받아야 함
+- 그 후 이클립스에서 자기가 쓰고자 하는 프로젝트 오른쪽 마우스 -> Run -> 
+  Run Configuration 에 Tomcat v8.5 Server at local에  Environment 탭에
+  New클릭 후 Variable에  GOOGLE_APPLICATION_CREDENTIALS를 
+  Value에 json파일이 위치한곳 경로를 적는다
+
+
+// 방문차량 검색
+		@RequestMapping(value = "/raspUploadfile", method = { RequestMethod.GET, RequestMethod.POST })
+		public String raspUploadfile(HttpServletRequest req, Model model) {
+			System.out.println("raspUploadfile()");
+			
+			String fileName = "";
+			String realImgPath = "";
+			String carNum = "";
+
+			MultipartRequest multi = (MultipartRequest) req;
+			MultipartFile file = multi.getFile("media");
+
+			if (file != null) {
+				fileName = file.getOriginalFilename();
+				System.out.println(fileName);
+
+				// 디렉토리 존재하지 않으면 생성
+				makeDir(req);
+
+				if (file.getSize() > 0) {
+					realImgPath = req.getSession().getServletContext().getRealPath("/resources/");
+
+					System.out.println(fileName + " : " + realImgPath);
+					System.out.println("fileSize : " + file.getSize());
+
+					try {
+						// 이미지파일 저장
+						file.transferTo(new File(realImgPath, fileName));
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				} else {
+					// 이미지파일 실패시
+					fileName = "FileFail.jpg";
+					realImgPath = req.getSession().getServletContext().getRealPath("/resources/" + fileName);
+					System.out.println(fileName + " : " + realImgPath);
+				}
+
+			}
+
+			// 이미지 파일 자동차 번호 추출 후
+			
+			try {
+				String imageFilePath = realImgPath+fileName; //여기에는 자신의 로컬 이미지 명이 들어가야합니다.
+				List<AnnotateImageRequest> requests = new ArrayList<>();
+				ByteString imgBytes = ByteString.readFrom(new FileInputStream(imageFilePath));
+				Image img = Image.newBuilder().setContent(imgBytes).build();
+				Feature feat = Feature.newBuilder().setType(Type.TEXT_DETECTION).build();
+				AnnotateImageRequest request = AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
+				requests.add(request);
+				try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+					BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+					List<AnnotateImageResponse> responses = response.getResponsesList();
+
+					for (AnnotateImageResponse res : responses) {
+						if (res.hasError()) {
+							System.out.printf("Error: %s\n", res.getError().getMessage());
+							//return;
+						}
+						String match = "[^\uAC00-\uD7A3xfe0-9]";
+//						String match = "/^[0-9]{2,3}[가-힣]{1}[0-9]{4}$/";
+						carNum = res.getTextAnnotationsList().get(0).getDescription().replaceAll(match,"").trim();
+						System.out.println("carnum: "+carNum);
+					}
+				}
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			// 데이터베이스에 있는번호면 리턴 : true
+			// 없는번호면 리턴 : false
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("returnValue", parkSelect(carNum));
+			model.addAttribute("raspUploadfile", map);
+
+			return "web_pages/vehicle_registeration/raspUploadfile";
+		}
+		
+===================================
+
+// parkSelect
+	public String parkSelect(String carNum) {
+		String vehicle_num = carNum.trim();
+		System.out.println(vehicle_num);
+		String result = null;
+		Vehicle_Registeration_OwnDTO ownDto = null;
+		Vehicle_Registeration_LongtermDTO longtermDto = null;
+		Vehicle_Registeration_OnceDTO onceDto = null;
+		ownDto = service.ownVehicleSearch(vehicle_num);
+		longtermDto = service.longtermVehicleSearch(vehicle_num);
+		onceDto = service.onceVehicleSearch(vehicle_num);
+		System.out.println("ownDto : [" + ownDto + "] // longtermDto : [" + longtermDto + "] // onceDto : [" + onceDto + "]");
+
+		if(ownDto != null) {
+			result = "true";
+		} else if (longtermDto != null) {
+			if (longtermDto.getLast_inyn().equals("n")) {
+				String last_inyn = "y";
+				Map<String, String> map = new HashMap<>();
+				map.put("vno", Integer.toString(longtermDto.getVno()));
+				map.put("last_inyn", last_inyn);
+				service.longtermParkUpdateY(map);
+				logger.info("longtermDto yyyyyyyyyy");
+			} else {
+				String last_inyn = "n";
+				Map<String, String> map = new HashMap<>();
+				map.put("vno", Integer.toString(longtermDto.getVno()));
+				map.put("last_inyn", last_inyn);
+				service.longtermParkUpdateN(map);
+				logger.info("longtermDto nnnnnnnnnn");
+			}
+			result = "true";
+			
+			
+		} else if (onceDto != null) {
+			if (onceDto.getInyn().equals("n")) {
+				String inyn = "y";
+				Map<String, String> map = new HashMap<>();
+				map.put("vno", Integer.toString(onceDto.getVno()));
+				map.put("inyn", inyn);
+				service.onceParkUpdateY(map);
+				logger.info("once yyyyyyyyyy");
+			} else {
+				String inyn = "n";
+				Map<String, String> map = new HashMap<>();
+				map.put("vno", Integer.toString(onceDto.getVno()));
+				map.put("inyn", inyn);
+				service.onceParkUpdateN(map);
+				service.onceParkDelete(onceDto.getVno());
+				logger.info("once nnnnnnnnnn");
+			}
+			result = "true";
+			
+		} else {
+			
+			result = null;
+		}
+
+		return result;
+	}
+
+
+===================================
+pom.xml
+
+	<!-- Firebase-->
+		<dependency>
+		  <groupId>com.google.firebase</groupId>
+		  <artifactId>firebase-admin</artifactId>
+		  <version>6.10.0</version>
+		</dependency>
+				
+				
+		<!-- 구글 비젼 -->       
+		<dependency>
+		  <groupId>com.google.cloud</groupId>
+		  <artifactId>google-cloud-vision</artifactId>
+		  <version>1.97.0</version>
+		</dependency>
